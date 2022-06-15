@@ -1,0 +1,30 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+#game-screen {
+    height: 100vh;
+    width: calc(100vw - 250px);
+    background-color: blue;
+}
+
+#game-infos {
+height: 100vh;
+background-color: green;
+width: 250px;
+}
+
+#game-canvas {
+    width: 100%;
+    height: calc(100vh - 150px);
+}
+
+#game-powers {
+    width: 100%;
+    height: 150px;
+    background-color: purple;
+}
