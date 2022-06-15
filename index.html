@@ -6,20 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
     <div id="container">
         <div id="game-screen">
             <div id="game-canvas">
+              
                 <div id="engine">
 
                     <div id="player">
                         <img src="imgs/player.gif">
                     </div>
-
-
-
+             
                 </div>
+          
+               
+
+
+
             </div>
             <div id="game-powers">
                
@@ -29,9 +35,37 @@
 
         </div>
         <div id="game-infos">
+            <div id="character-infos">
+                <div id="infos-filter">
+                    <h2>Character Name</h2>
+                        <div id="life-bar-div">
+                            <div id="icon-life-div">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <div id="bar-life-div">
+                                <div id="bar-life"></div>
+                            </div>
+                            <div id="life-output-div">
+                                <p id="life-output">180</p>
+                            </div>
+                        </div>
+                    
+                        <div id="mana-bar-div">
+                            <div id="icon-mana-div">
+                                <i class="fa-solid fa-hat-wizard"></i>
+                            </div>
+                            <div id="bar-mana-div">
+                                <div id="bar-mana"></div>
+                            </div>
+                            <div id="mana-output-div">
+                                <p id="mana-output">240</p>
+                        </div>
+                    </div>
+                </div>  
+            </div>
 
         </div>
-
+        
 
 
 
@@ -48,5 +82,7 @@
 
     </div>
 
+
+    <script src="scripts/app.js"></script>
 </body>
 </html>

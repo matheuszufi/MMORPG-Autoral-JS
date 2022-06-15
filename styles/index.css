@@ -1,4 +1,5 @@
 @font-face {font-family: martel; src: url(../martel.ttf);}
+@font-face {font-family: tahoma8; src: url(../tahoma.ttf);}
 
 * {margin: 0; padding: 0; box-sizing: border-box;}
 
@@ -28,7 +29,7 @@ width: 250px;
     background: url(../imgs/backgroundStyleTibia.png);
     border-right: 1px solid rgba(0, 0, 0, 0.585);
     font-family: 'martel';
-    border-top: 1px solid rgba(183, 183, 183, 0.56);;
+    border-top: 1px solid rgba(183, 183, 183, 0.56);
 }
 
 /* TELA PRINCIPAL */
@@ -48,10 +49,131 @@ width: 250px;
 }
 
 #player {
-  width: 200px;
-  filter: drop-shadow(1px 1px 5px black);
+    width: 120px;
+    filter: drop-shadow(1px 1px 5px black);
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 #player img {
     width: 100%;
+}
+
+
+#character-infos {
+    background: url(../imgs/backgroundStyleTibia.png);
+    width: 100%;
+    border-right: 1px solid rgba(0, 0, 0, 0.585);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.585);
+    border-top: 1px solid rgba(183, 183, 183, 0.56);
+    border-left: 1px solid rgba(183, 183, 183, 0.56);
+    height: 100px;
+    box-shadow: 5px 0px 5px black;
+}
+#infos-filter h2 {color: white; margin-bottom: 10px; font-size: 16px;}
+
+#infos-filter {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-family: 'tahoma8';
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid black;
+
+}
+
+#life-bar-div {
+    width: 100%;
+    height: 25px;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+#mana-bar-div {
+    width: 100%;
+    color: white;
+    height: 25px;  
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+
+#icon-life-div {
+    width: 30px;
+    height: 100%;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+
+}
+
+#bar-life-div {
+
+    width: 170px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bar-life {
+    background-color: red;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px black;
+}
+
+#life-output-div {
+    font-size: 10px;
+    width: 40px;
+}
+#icon-mana-div {
+    width: 30px;
+    height: 100%;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    color: rgb(128, 82, 188);
+    align-items: center;
+  
+}
+
+#bar-mana-div {
+    width: 170px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bar-mana {
+    background-color: blue;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px black;
+}
+
+#mana-output-div {
+    display: flex;
+    justify-content: center;
+}
+
+#mana-output {
+    font-size: 10px;
+    width: 40px;
 }
