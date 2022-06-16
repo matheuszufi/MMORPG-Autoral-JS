@@ -254,64 +254,8 @@ width: 200px;
     display: flex;
 }
 
-#infos-character {
-    display: flex;
-    flex-direction: column;
-    height: 250px;
-    width: 100%;
-    border-right: 1px solid rgba(0, 0, 0, 0.585);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.585);
-    border-top: 1px solid rgba(183, 183, 183, 0.56);
-    border-left: 1px solid rgba(183, 183, 183, 0.56);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.392);
-    background: url(../imgs/backgroundStyleTibia.png);
-    font-family: 'martel';
-    color: white;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
-}
-#infos-character-header {
-    width: 100%;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#infos-charlevel-div{
-    width: 100%;
-    font-family: 'tahoma8';
-    display: flex;
-    font-size: 12px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-#infos-character-lvl {
-    width: 100%;
-    display: flex;
-
-}
-
-#infos-label-character-level{width: 90%; }
-#infos-number-character-level{ width: 10%;}
-#infos-bar-character-level {
-    width: 90%;
-    height: 10px;
-
-}
-
-
-#exp-to-lvl-up {
-    width: 100%;
-
-    border: 1px solid black;
-    height: 5px;
-}
-#exp-progress {
-    width: 100%;
-    background-color: red;
-    height: 5px;
-}
+ /*  COIN / SHOP */
+ /*  COIN / SHOP */
 
 #infos-coins-shop {
     display: flex;
@@ -395,6 +339,11 @@ width: 200px;
 #shop-img:active {
     background-color: rgba(0, 0, 0, 0.3);
 }
+
+
+
+
+/*  PARTE DE BAIXO */
 
 #gp-loot {
     display: flex;
