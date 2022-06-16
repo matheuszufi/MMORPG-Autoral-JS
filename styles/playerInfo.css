@@ -54,10 +54,7 @@
     width: 100%;
     background-color: red;
     height: 100%;
-   
 }
-
-
 
 /* ATACK LEVEL */
 /* ATACK LEVEL */
@@ -134,6 +131,42 @@
 /*  MAGIC LEVEL  */
 /*  MAGIC LEVEL  */
 
+
+#infos-charlevelmagic-div{
+    width: 100%;
+    font-family: 'tahoma8';
+    display: flex;
+    font-size: 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#infos-character-lvlmagic {
+    width: 90%;
+    display: flex;
+}
+
+#infos-label-character-levelmagic{width: 90%; }
+#infos-number-character-levelmagic{ width: 10%;}
+#infos-bar-character-levelmagic {
+    width: 90%;
+    height: 10px;
+}
+
+#exp-to-lvl-up-magic {
+    width: 100%;
+    border: 1px solid black;
+    height: 5px;
+}
+#exp-progress-magic {
+    width: 100%;
+    background-color: rgb(81, 81, 255);
+    height: 100%;    
+}
+
+
+/*  SHIELDING  */
+/*  SHIELDING  */
 
 #infos-charlevelmagic-div{
     width: 100%;
