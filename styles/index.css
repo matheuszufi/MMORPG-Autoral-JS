@@ -293,6 +293,7 @@ width: 200px;
 #infos-shop img {
     width: 50px;
     margin: 2px 0px;
+    filter: drop-shadow(1px 1px 3px rgba(211, 192, 74, 0.822));
 }
 
 #shop-img {
