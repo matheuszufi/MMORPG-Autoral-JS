@@ -60,14 +60,33 @@ width: 200px;
 }
 
 #player {
-    width: 120px;
-    filter: drop-shadow(1px 1px 5px black);
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     transition: 0.2s;
 }
 
+#div-player-life {
+    width: 80%;
+
+}
+#player-max-life {
+    width: 100%;
+    height: 4px;
+    background-color: rgba(39, 39, 39, 0.554);
+    border: 1px solid black;
+}
+
+#player-life {
+    width: 100%;
+    background-color: green;
+    height: 100%;
+}
 #player img {
     width: 100%;
-    
+    filter: drop-shadow(1px 1px 5px black);
 }
 
 
@@ -140,22 +159,30 @@ width: 200px;
     justify-content: center;
 }
 
-#bar-life {
- 
+#bar-max-life {
     width: 100%;
     height: 10px;
     border-radius: 5px;
-    box-shadow: 1px 1px 1px black;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    animation: lifeAnime 2s linear infinite;
+    border-right: 1px solid rgba(0, 0, 0, 0.585);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.585);
+    border-top: 1px solid rgba(183, 183, 183, 0.56);
+    border-left: 1px solid rgba(183, 183, 183, 0.56);
+}
+#bar-life {
+    border-right: 1px solid rgba(0, 0, 0, 0.585);
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    animation: lifeAnime 4s linear infinite;
+    /* RED BACKGROUND*/
 }
 
 @keyframes lifeAnime { 
     0%, 100% {
-        background-color: red;
+        background-color: rgb(255, 58, 58);
     }
     50% {
-        background-color: rgb(255, 88, 88);
+        background-color: rgb(255, 122, 122);
     }
 }
 
@@ -182,22 +209,30 @@ width: 200px;
     justify-content: center;
 }
 
-#bar-mana {
-    background-color: blue;
+#bar-max-mana {
     width: 100%;
     height: 10px;
     border-radius: 5px;
-    box-shadow: 1px 1px 1px black;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    animation: manaAnime 2s linear infinite;
+    border-right: 1px solid rgba(0, 0, 0, 0.585);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.585);
+    border-top: 1px solid rgba(183, 183, 183, 0.56);
+    border-left: 1px solid rgba(183, 183, 183, 0.56);
+}
+
+#bar-mana {
+    border-right: 1px solid rgba(0, 0, 0, 0.585);
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    animation: manaAnime 4s linear infinite;
 }
 
 @keyframes manaAnime { 
     0%, 100% {
-        background-color: blue;
+        background-color: rgb(36, 36, 255);
     }
     50% {
-        background-color: rgb(106, 106, 255);
+        background-color: rgb(80, 80, 255);
     }
 }
 
@@ -219,7 +254,7 @@ width: 200px;
     display: flex;
 }
 
-#infos-set {
+#infos-character {
     display: flex;
     height: 250px;
     width: 100%;
@@ -228,8 +263,18 @@ width: 200px;
     border-top: 1px solid rgba(183, 183, 183, 0.56);
     border-left: 1px solid rgba(183, 183, 183, 0.56);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.392);
+    background: url(../imgs/backgroundStyleTibia.png);
+    font-family: 'martel';
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
 }
-
+#infos-character-header {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #infos-coins-shop {
     display: flex;
     flex-direction: column;
@@ -241,6 +286,7 @@ width: 200px;
     border-top: 1px solid rgba(183, 183, 183, 0.56);
     border-left: 1px solid rgba(183, 183, 183, 0.56);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.392);
+    background: url(../imgs/backgroundStyleTibia.png);
 }
 
 #infos-coins {
@@ -266,11 +312,12 @@ width: 200px;
 #infos-coins p {
     color: white;
     cursor:default;
+    font-family: 'tahoma8' ;
     
 }
 
 #character-coins {
-    margin-top: -70px;
+    margin-top: -75px;
     margin-left: -6px;
     width: 100%;
     height: 100px;
@@ -382,6 +429,7 @@ width: 200px;
 .character-power p {
     font-family: 'Courier New', Courier, monospace;
     font-size: 10px;
+    font-weight: bold;
 }
 
 #character-power-filter:hover {
