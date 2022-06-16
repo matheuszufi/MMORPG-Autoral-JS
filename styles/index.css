@@ -20,7 +20,7 @@
 height: 100vh;
 background: url(../imgs/backgroundStyleTibia.png);
 border-left: 1px solid rgba(183, 183, 183, 0.56);
-width: 250px;
+width: 220px;
 }
 
 #game-powers {
@@ -77,12 +77,12 @@ width: 250px;
     height: 100px;
     box-shadow: 5px 0px 5px black;
 }
-#infos-filter h2 {color: white; margin-bottom: 10px; font-size: 16px;}
+#infos-filter h2 {text-shadow: 1px 1px 5px black; color: white; margin-bottom: 10px; font-size: 16px; font-family: 'martel';}
 
 #infos-filter {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(48, 48, 48, 0.089);
     font-family: 'tahoma8';
     font-weight: bold;
     text-align: center;
@@ -123,12 +123,13 @@ width: 250px;
     justify-content: center;
     align-items: center;
     color: red;
+    filter: drop-shadow(1px 1px 1px black);
 
 }
 
 #bar-life-div {
 
-    width: 170px;
+    width: 150px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -136,16 +137,27 @@ width: 250px;
 }
 
 #bar-life {
-    background-color: red;
+ 
     width: 100%;
     height: 10px;
     border-radius: 5px;
-    box-shadow: 1px 1px 3px black;
+    box-shadow: 1px 1px 1px black;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    animation: lifeAnime 2s linear infinite;
+}
+
+@keyframes lifeAnime { 
+    0%, 100% {
+        background-color: red;
+    }
+    50% {
+        background-color: rgb(255, 88, 88);
+    }
 }
 
 #life-output-div {
     font-size: 10px;
-    width: 40px;
+    width: 30px;
 }
 #icon-mana-div {
     width: 30px;
@@ -155,11 +167,11 @@ width: 250px;
     justify-content: center;
     color: rgb(128, 82, 188);
     align-items: center;
-  
+    filter: drop-shadow(1px 1px 1px black);
 }
 
 #bar-mana-div {
-    width: 170px;
+    width: 150px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -171,7 +183,18 @@ width: 250px;
     width: 100%;
     height: 10px;
     border-radius: 5px;
-    box-shadow: 1px 1px 3px black;
+    box-shadow: 1px 1px 1px black;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    animation: manaAnime 2s linear infinite;
+}
+
+@keyframes manaAnime { 
+    0%, 100% {
+        background-color: blue;
+    }
+    50% {
+        background-color: rgb(106, 106, 255);
+    }
 }
 
 #mana-output-div {
@@ -181,7 +204,7 @@ width: 250px;
 
 #mana-output {
     font-size: 10px;
-    width: 40px;
+    width: 30px;
 }
 
 
@@ -192,7 +215,7 @@ width: 250px;
     display: flex;
 }
 
-#gp-main-weapon {
+#gp-loot {
     display: flex;
     height: 100%;
     width: 200px;
@@ -201,4 +224,95 @@ width: 250px;
     border-top: 1px solid rgba(183, 183, 183, 0.56);
     border-left: 1px solid rgba(183, 183, 183, 0.56);
     box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.392);
+}
+
+#infos-set {
+    display: flex;
+    height: 250px;
+    width: 100%;
+    border-right: 1px solid rgba(0, 0, 0, 0.585);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.585);
+    border-top: 1px solid rgba(183, 183, 183, 0.56);
+    border-left: 1px solid rgba(183, 183, 183, 0.56);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.392);
+}
+
+#infos-coins-shop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 150px;
+    width: 100%;
+    border-right: 1px solid rgba(0, 0, 0, 0.585);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.585);
+    border-top: 1px solid rgba(183, 183, 183, 0.56);
+    border-left: 1px solid rgba(183, 183, 183, 0.56);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.392);
+}
+
+#infos-coins {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
+ 
+  
+}
+
+#infos-coins img {
+    width: 90%;
+    height: 100%;
+    margin: 0px 6px;
+    
+}
+
+#infos-coins p {
+    color: white;
+    cursor:default;
+    
+}
+
+#character-coins {
+    margin-top: -70px;
+    margin-left: -6px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+#character-coins img {
+    width: 35px;
+    height: 25px;
+}
+
+#infos-shop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#infos-shop img {
+    width: 50px;
+    margin: 2px 0px;
+}
+
+#shop-img {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50%;
+    border-right: 1px solid rgba(0, 0, 0, 0.585);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.585);
+    border-top: 1px solid rgba(183, 183, 183, 0.56);
+    border-left: 1px solid rgba(183, 183, 183, 0.56);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+#shop-img:active {
+    background-color: rgba(0, 0, 0, 0.3);
 }
