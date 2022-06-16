@@ -256,6 +256,7 @@ width: 200px;
 
 #infos-character {
     display: flex;
+    flex-direction: column;
     height: 250px;
     width: 100%;
     border-right: 1px solid rgba(0, 0, 0, 0.585);
@@ -275,6 +276,43 @@ width: 200px;
     justify-content: center;
     align-items: center;
 }
+
+#infos-charlevel-div{
+    width: 100%;
+    font-family: 'tahoma8';
+    display: flex;
+    font-size: 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#infos-character-lvl {
+    width: 100%;
+    display: flex;
+
+}
+
+#infos-label-character-level{width: 90%; }
+#infos-number-character-level{ width: 10%;}
+#infos-bar-character-level {
+    width: 90%;
+    height: 10px;
+
+}
+
+
+#exp-to-lvl-up {
+    width: 100%;
+
+    border: 1px solid black;
+    height: 5px;
+}
+#exp-progress {
+    width: 100%;
+    background-color: red;
+    height: 5px;
+}
+
 #infos-coins-shop {
     display: flex;
     flex-direction: column;
