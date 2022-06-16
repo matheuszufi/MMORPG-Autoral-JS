@@ -1,5 +1,7 @@
 let player = {
+    maxLife: 180,
     life: 180,
+    maxMagic: 240,
     magic: 240,
 
     magicLevel: 1,
