@@ -67,7 +67,7 @@ width: 200px;
     flex-direction: column;
     align-items: center;
     transition: 0.2s;
-    position: absolute;
+    position: relative;
 }
 
 #div-player-life {

@@ -50,7 +50,7 @@ document.addEventListener('keydown', (event) => {
     let distanceX = (posX - posXe);
     let distanceY = (posY - posYe);
 
-    console.log(distanceX);
+    console.log(distanceX, distanceY);
     
  
     if (distanceX < 1 && distanceX > -1 && distanceY < 1 && distanceY > -1) {
