@@ -28,7 +28,7 @@ rat.style.transform= `translate(${enemyPosY}px,${enemyPosX}px)`;
 let posY = 0;
 let posX = 0;
 
-
+let targeted = false;
 
 let distanceX = posX - enemyPosX;
 let distanceY = posY - enemyPosY;
@@ -48,11 +48,9 @@ document.addEventListener('keydown', (event) => {
             posY = posY - 80;
             character.style.transform = `translate(${posY}px,${posX}px)`
             distanceY = posY - enemyPosY;
-            if (distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
+            if (targeted === true && distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
                 atackEnemy();       
-            } else {
-
-            }
+            } 
         }
 
     } else if (event.key === btnW) {
@@ -60,10 +58,8 @@ document.addEventListener('keydown', (event) => {
             posX = posX - 50;
             character.style.transform = `translate(${posY}px,${posX}px)`
             distanceX = posX - enemyPosX;
-            if (distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
+            if (targeted === true && distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
                 atackEnemy();       
-            } else {
-
             }
         }
 
@@ -72,10 +68,8 @@ document.addEventListener('keydown', (event) => {
             posY = posY + 80;
             character.style.transform = `translate(${posY}px,${posX}px)`                   
             distanceY = posY - enemyPosY;
-            if (distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
+            if (targeted === true && distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
                 atackEnemy();       
-            } else {
-
             }
         }
    
@@ -84,18 +78,15 @@ document.addEventListener('keydown', (event) => {
             posX = posX + 50;
             character.style.transform = `translate(${posY}px,${posX}px)`
             distanceX = posX - enemyPosX;
-            if (distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
+            if (targeted === true && distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
                 atackEnemy();       
-            } else {
-                
-            }
+            } 
         }
     }
 
 });
 }
 
-let targeted = false;
 
 loadEventListeners();
 function loadEventListeners() {
