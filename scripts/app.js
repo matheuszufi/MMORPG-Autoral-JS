@@ -6,8 +6,9 @@ ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
 
 
 const posXe = Math.floor(Math.random() * (450 - 0) + 1);
-const posYe = Math.floor(Math.random() * (720 - 0) + 1);
+const posYe = Math.floor(Math.random() * (700 - 0) + 1);
 
+changePosition();
 
 // PLAYER MOVIMENT
     // PLAYER MOVIMENT
@@ -53,7 +54,7 @@ document.addEventListener('keydown', (event) => {
     console.log(distanceX, distanceY);
     
  
-    if (distanceX < 1 && distanceX > -1 && distanceY < 1 && distanceY > -1) {
+    if (distanceX < 100 && distanceX > -100 && distanceY < 100 && distanceY > -100) {
         atackRat();
     }
 
@@ -65,6 +66,7 @@ function atackRat() {
 }
 
 function hurtRat () {
+ 
     enemies.rat.life -= 2;
     ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`;
 
@@ -75,12 +77,10 @@ function hurtRat () {
 }
 
 
-changePosition();
-
 function changePosition() {
 
-    // const posYe2 = Math.floor(Math.random() * (720 - 0) + 1);
-    // const posXe2 = Math.floor(Math.random() * (450 - 0) + 1);
+     const posYe2 = Math.floor(Math.random() * (720 - 0) + 1);
+     const posXe2 = Math.floor(Math.random() * (450 - 0) + 1);
 
     rat.style.top = `${posXe}px`;
     rat.style.left = `${posYe}px`;
@@ -88,3 +88,16 @@ function changePosition() {
   
 
 
+function killRat() {
+enemies.rat.life = enemies.rat.maxLife;
+changePosition2();
+}
+
+function changePosition2() {
+
+    const posYe2 = Math.floor(Math.random() * (720 - 0) + 1);
+    const posXe2 = Math.floor(Math.random() * (450 - 0) + 1);
+
+   rat.style.top = `${posXe}px`;
+   rat.style.left = `${posYe}px`;
+}
