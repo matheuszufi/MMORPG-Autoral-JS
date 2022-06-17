@@ -5,10 +5,21 @@ const ratLife = document.getElementById('rat-life');
 ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
 
 
-const posXe = Math.floor(Math.random() * (450 - 0) + 1);
-const posYe = Math.floor(Math.random() * (700 - 0) + 1);
 
-changePosition();
+
+    // ENEMY POSITION
+
+eMaxPosX = 400; 
+eMaxPosY = 720; 
+eMinPosX = 0;
+eMinPosY = 0;
+
+let enemyPosX = 450;
+let enemyPosY = 0;
+
+rat.style.transform= `translate(${enemyPosY}px,${enemyPosX}px)`;
+
+
 
 // PLAYER MOVIMENT
     // PLAYER MOVIMENT
@@ -16,88 +27,113 @@ changePosition();
 
 let posY = 0;
 let posX = 0;
+
+
+
+let distanceX = posX - enemyPosX;
+let distanceY = posY - enemyPosY;
+ isNear();
+function isNear() {
+
+
 document.addEventListener('keydown', (event) => {
-    btnA = "a";
-    btnW = "w";
-    btnD = "d";
-    btnS = "s";
+
+        btnA = "a";
+        btnW = "w";
+        btnD = "d";
+        btnS = "s";
  
    if(event.key === btnA) {
         if(posY > 0){
             posY = posY - 80;
             character.style.transform = `translate(${posY}px,${posX}px)`
+            distanceY = posY - enemyPosY;
+            if (distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
+                atackEnemy();       
+            } else {
+
+            }
         }
 
     } else if (event.key === btnW) {
         if(posX > 0){
             posX = posX - 50;
             character.style.transform = `translate(${posY}px,${posX}px)`
+            distanceX = posX - enemyPosX;
+            if (distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
+                atackEnemy();       
+            } else {
+
+            }
         }
 
     } else if (event.key === btnD) {
         if(posY < 720){
             posY = posY + 80;
             character.style.transform = `translate(${posY}px,${posX}px)`                   
+            distanceY = posY - enemyPosY;
+            if (distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
+                atackEnemy();       
+            } else {
+
+            }
         }
    
    } else if (event.key === btnS) {
         if(posX < 420){
             posX = posX + 50;
             character.style.transform = `translate(${posY}px,${posX}px)`
-   
+            distanceX = posX - enemyPosX;
+            if (distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
+                atackEnemy();       
+            } else {
+                
+            }
         }
     }
 
-    let distanceX = (posX - posXe);
-    let distanceY = (posY - posYe);
-
-    console.log(distanceX, distanceY);
-    
- 
-    if (distanceX < 100 && distanceX > -100 && distanceY < 100 && distanceY > -100) {
-        atackRat();
-    }
-
 });
-
-function atackRat() {
-    // rat.addEventListener('click', atkRat);
-    rat.addEventListener('click', hurtRat);
 }
 
-function hurtRat () {
- 
-    enemies.rat.life -= 2;
-    ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`;
+let targeted = false;
 
-    if (enemies.rat.life <= 0) {
-        killRat();
-        changePosition();
+loadEventListeners();
+function loadEventListeners() {
+    rat.addEventListener('click', targetEnemy);
+}
+
+function targetEnemy() {
+    targeted = true;
+    if (targeted = true){
+    rat.style.border = "1px solid red";
+    }
+}
+
+function atackEnemy() {
+    if (targeted === true) {
+   
+        enemies.rat.life -= player.atackDamage;
+        ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
+        setInterval(slashEnemy, 2000);
+
+        // if(enemies.rat.life <= 0) {
+        //     killEnemy();
+        // }
+    }
+}
+
+function slashEnemy () {
+    if (targeted === true) {
+    enemies.rat.life -= player.atackDamage;
+    ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
     }
 }
 
 
-function changePosition() {
+// function killEnemy() {
+//     targeted = false;
+//     rat.style.border = "none";
+//     enemies.rat.life = enemies.rat.maxLife;
+//     ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
+// }
 
-     const posYe2 = Math.floor(Math.random() * (720 - 0) + 1);
-     const posXe2 = Math.floor(Math.random() * (450 - 0) + 1);
-
-    rat.style.top = `${posXe}px`;
-    rat.style.left = `${posYe}px`;
-}
-  
-
-
-function killRat() {
-enemies.rat.life = enemies.rat.maxLife;
-changePosition2();
-}
-
-function changePosition2() {
-
-    const posYe2 = Math.floor(Math.random() * (720 - 0) + 1);
-    const posXe2 = Math.floor(Math.random() * (450 - 0) + 1);
-
-   rat.style.top = `${posXe}px`;
-   rat.style.left = `${posYe}px`;
-}

@@ -12,5 +12,8 @@ let player = {
     atackSpeed: 2000,
     distanceLevel: 1,
     shieldLevel: 1,
+
+    atackDamage: 2,
+    spellDamage: 5
 }
 
