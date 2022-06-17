@@ -39,3 +39,52 @@ document.addEventListener('keydown', (event) => {
     }
 
 });
+
+
+const rat = document.getElementById('enemy-rat');
+const ratLife = document.getElementById('rat-life');
+ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
+
+loadEventListeners();
+
+function loadEventListeners() {
+    rat.addEventListener('click', atkRat);
+}
+
+
+function atkRat (atkInterval) {
+        // COLOCAR NO MAXIMO 1 ATK (VARIOS CLIQUES = VARIOS ATAQUES)
+
+    atkInterval = setInterval(enemyTargeted, `${player.atackSpeed}`);
+    
+    function enemyTargeted() {
+    enemies.rat.life -= 2;
+    ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
+    
+        if(enemies.rat.life <= 0) {
+            stopInterval();
+           
+            killRat();
+        }
+
+    }
+
+}
+
+
+function killRat() {
+    rat.style.display = "none";
+    changePosition();
+    enemies.rat.life = enemies.rat.maxLife;
+    ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`;
+   
+}
+
+function changePosition() {
+    rat.style.transform = `translate(-40px, -40px)`;
+    rat.style.display = "block";
+}
+
+function stopInterval() {
+    clearInterval(atkInterval);
+}

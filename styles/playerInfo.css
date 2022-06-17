@@ -4,7 +4,8 @@
 #infos-character {
     display: flex;
     flex-direction: column;
-    height: 250px;
+    justify-content: center;
+    height: 200px;
     width: 100%;
     border-right: 1px solid rgba(0, 0, 0, 0.585);
     border-bottom: 1px solid rgba(0, 0, 0, 0.585);
@@ -165,10 +166,11 @@
 }
 
 
-/*  SHIELDING  */
-/*  SHIELDING  */
 
-#infos-charlevelmagic-div{
+/*  DISTANCE  */
+/*  DISTANCE  */
+
+#infos-charleveldistance-div{
     width: 100%;
     font-family: 'tahoma8';
     display: flex;
@@ -177,26 +179,62 @@
     justify-content: center;
     align-items: center;
 }
-#infos-character-lvlmagic {
+#infos-character-lvldistance {
     width: 90%;
     display: flex;
 }
 
-#infos-label-character-levelmagic{width: 90%; }
-#infos-number-character-levelmagic{ width: 10%;}
-#infos-bar-character-levelmagic {
+#infos-label-character-leveldistance{width: 90%; }
+#infos-number-character-leveldistance{ width: 10%;}
+#infos-bar-character-leveldistance {
     width: 90%;
     height: 10px;
 }
 
-#exp-to-lvl-up-magic {
+#exp-to-lvl-up-distance {
     width: 100%;
     border: 1px solid black;
     height: 5px;
 }
-#exp-progress-magic {
+#exp-progress-distance {
     width: 100%;
-    background-color: rgb(81, 81, 255);
+    background-color: green;
+    height: 100%;
+    
+}
+
+/*  SHIELDING  */
+/*  SHIELDING  */
+
+#infos-charlevelshielding-div{
+    width: 100%;
+    font-family: 'tahoma8';
+    display: flex;
+    font-size: 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#infos-character-lvlshielding {
+    width: 90%;
+    display: flex;
+}
+
+#infos-label-character-levelshielding{width: 90%; }
+#infos-number-character-levelshielding{ width: 10%;}
+#infos-bar-character-levelshielding {
+    width: 90%;
+    height: 10px;
+}
+
+#exp-to-lvl-up-shielding {
+    width: 100%;
+    border: 1px solid black;
+    height: 5px;
+}
+#exp-progress-shielding {
+    width: 100%;
+    background-color: green;
     height: 100%;
     
 }

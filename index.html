@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/playerInfo.css">
+    <link rel="stylesheet" href="styles/enemies.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
@@ -17,14 +18,18 @@
               
                 <div id="engine">
                     <div class="blocks" id="block-1">
-                    <div id="player">
-                        <div id="div-player-life">
-                            <div id="player-max-life">
-                                <div id="player-life"></div>
+
+                        <div id="player">
+                            <div id="div-player-life">
+                                <div id="player-max-life">
+                                    <div id="player-life"></div>
+                                </div>
                             </div>
+                            <img src="imgs/player.gif">
                         </div>
-                        <img src="imgs/player.gif">
-                    </div>
+
+                        
+
                     </div>
                     <div class="blocks" id="block-2"></div>
                     <div class="blocks" id="block-3"></div>
@@ -124,7 +129,19 @@
                     <div class="blocks" id="block-97"></div>
                     <div class="blocks" id="block-98"></div>
                     <div class="blocks" id="block-99"></div>
-                    <div class="blocks" id="block-100"></div>
+                    <div class="blocks" id="block-100">
+                        <div id="enemy-rat">
+                            <div id="div-rat-life">
+                                <div id="rat-max-life">
+                                    <div id="rat-life"></div>
+                                </div>
+                            </div>
+                            <div id="rat-image">
+                                <img src="/imgs/rat.gif">
+                            </div>
+                            
+                        </div>
+                    </div>
                 </div>
           
                
@@ -133,10 +150,20 @@
 
             </div>
             <div id="game-powers">
-               <div id="gp-loot">
-
-               </div>
-               <div id="gp-powers">
+               <div id="gp-map">
+                <div id="map-header">
+                    <h3>Map</h3>
+                </div>
+                <div id="map-image">
+                    <img src="/imgs/earthmap.gif">
+                </div>
+               
+               
+            </div>
+            
+            
+            
+            <div id="gp-powers">
                     <div id="powers">
                         <div class="character-power">
                             <div id="character-power-filter">
@@ -190,7 +217,6 @@
                     </div>
                </div>
             </div>
-
 
 
         </div>
@@ -282,7 +308,7 @@
                         </div>
                     </div>
 
-                    
+
                     <div id="infos-charlevelatack-div">
                         <div id="infos-character-lvlatack">
                             <div id="infos-label-character-levelatack">
@@ -317,10 +343,41 @@
                     </div>
 
 
+                    
+                    <div id="infos-charleveldistance-div">
+                        <div id="infos-character-lvldistance">
+                            <div id="infos-label-character-leveldistance">
+                                Acurate
+                            </div>
+                            <div id="infos-number-character-leveldistance">
+                                1
+                            </div>
+                        </div>
+                        <div id="infos-bar-character-leveldistance">
+                            <div id="exp-to-lvl-up-distance">
+                                <div id="exp-progress-distance"></div>
+                            </div>
+                        </div>
+                    </div>
 
+
+                    <div id="infos-charlevelshielding-div">
+                        <div id="infos-character-lvlshielding">
+                            <div id="infos-label-character-levelshielding">
+                                Shielding
+                            </div>
+                            <div id="infos-number-character-levelshielding">
+                                1
+                            </div>
+                        </div>
+                        <div id="infos-bar-character-levelshielding">
+                            <div id="exp-to-lvl-up-shielding">
+                                <div id="exp-progress-shielding"></div>
+                            </div>
+                        </div>
+                    </div>
             
-
-
+                 
 
 
 
@@ -346,7 +403,9 @@
 
     </div>
 
-
+    <script src="scripts/player.js"></script>
+    <script src="scripts/enemies.js"></script>
     <script src="scripts/app.js"></script>
+    
 </body>
 </html>
