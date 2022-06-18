@@ -465,3 +465,13 @@ width: 200px;
 #character-power-filter:hover {
     background-color: rgba(255, 255, 255, 0.3);
 }
+
+#fire-field {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    width: 800px;
+    height: 500px;
+}

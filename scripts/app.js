@@ -14,7 +14,7 @@ eMaxPosY = 720;
 eMinPosX = 0;
 eMinPosY = 0;
 
-let enemyPosX = 450;
+let enemyPosX = 0;
 let enemyPosY = 0;
 
 rat.style.transform= `translate(${enemyPosY}px,${enemyPosX}px)`;
@@ -30,10 +30,10 @@ let posX = 0;
 
 let targeted = false;
 
+
 let distanceX = posX - enemyPosX;
 let distanceY = posY - enemyPosY;
- isNear();
-function isNear() {
+
 
 
 document.addEventListener('keydown', (event) => {
@@ -48,9 +48,7 @@ document.addEventListener('keydown', (event) => {
             posY = posY - 80;
             character.style.transform = `translate(${posY}px,${posX}px)`
             distanceY = posY - enemyPosY;
-            if (targeted === true && distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
-                atackEnemy();       
-            } 
+         
         }
 
     } else if (event.key === btnW) {
@@ -58,9 +56,7 @@ document.addEventListener('keydown', (event) => {
             posX = posX - 50;
             character.style.transform = `translate(${posY}px,${posX}px)`
             distanceX = posX - enemyPosX;
-            if (targeted === true && distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
-                atackEnemy();       
-            }
+         
         }
 
     } else if (event.key === btnD) {
@@ -68,9 +64,7 @@ document.addEventListener('keydown', (event) => {
             posY = posY + 80;
             character.style.transform = `translate(${posY}px,${posX}px)`                   
             distanceY = posY - enemyPosY;
-            if (targeted === true && distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
-                atackEnemy();       
-            }
+         
         }
    
    } else if (event.key === btnS) {
@@ -78,14 +72,12 @@ document.addEventListener('keydown', (event) => {
             posX = posX + 50;
             character.style.transform = `translate(${posY}px,${posX}px)`
             distanceX = posX - enemyPosX;
-            if (targeted === true && distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
-                atackEnemy();       
-            } 
+ 
         }
-    }
+    } 
 
 });
-}
+
 
 
 loadEventListeners();
@@ -95,36 +87,68 @@ function loadEventListeners() {
 
 function targetEnemy() {
     targeted = true;
+
+    
+    
     if (targeted = true){
     rat.style.border = "1px solid red";
-    }
+        slashEnemy();
+}
 }
 
 function atackEnemy() {
+   
     if (targeted === true) {
    
         enemies.rat.life -= player.atackDamage;
         ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
-        setInterval(slashEnemy, 2000);
+        
 
         // if(enemies.rat.life <= 0) {
         //     killEnemy();
         // }
+
+        if (enemies.rat.life <= 0) {
+            killEnemy();
+            
+        }
+       
     }
 }
 
 function slashEnemy () {
-    if (targeted === true) {
-    enemies.rat.life -= player.atackDamage;
+    
+    if (distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
+    enemies.rat.life = enemies.rat.life - player.atackDamage;
     ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
+      
+}
+    
+    if (enemies.rat.life <= 0) {
+        killEnemy();
     }
 }
 
 
-// function killEnemy() {
-//     targeted = false;
-//     rat.style.border = "none";
-//     enemies.rat.life = enemies.rat.maxLife;
-//     ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
-// }
+function killEnemy() {
+    changePosition();
+    targeted = false;
+    enemies.rat.life = enemies.rat.maxLife;
+    ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
+}
 
+function changePosition() {
+    max = 10;
+    min = 0;
+    let eposY = Math.floor(Math.random() * (max - min));
+    let eposX = Math.floor(Math.random() * (max - min));
+    let enemyPosX = eposX * 50;
+    let enemyPosY = eposY * 80;
+    distanceX = posX - enemyPosX;
+    distanceY = posY - enemyPosY;
+    rat.style.transform = `translate(${enemyPosY}px, ${enemyPosX}px`;
+   
+
+   
+    console.log(posY);
+}

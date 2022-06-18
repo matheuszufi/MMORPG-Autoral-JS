@@ -13,7 +13,6 @@ let player = {
     distanceLevel: 1,
     shieldLevel: 1,
 
-    atackDamage: 2,
+    atackDamage: 5,
     spellDamage: 5
 }
-
