@@ -4,9 +4,6 @@ const rat = document.getElementById('enemy-rat');
 const ratLife = document.getElementById('rat-life');
 ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
 
-
-
-
     // ENEMY POSITION
 
 eMaxPosX = 400; 
@@ -15,11 +12,9 @@ eMinPosX = 0;
 eMinPosY = 0;
 
 let enemyPosX = 0;
-let enemyPosY = 0;
+let enemyPosY = 80;
 
 rat.style.transform= `translate(${enemyPosY}px,${enemyPosX}px)`;
-
-
 
 // PLAYER MOVIMENT
     // PLAYER MOVIMENT
@@ -47,8 +42,7 @@ document.addEventListener('keydown', (event) => {
         if(posY > 0){
             posY = posY - 80;
             character.style.transform = `translate(${posY}px,${posX}px)`
-            distanceY = posY - enemyPosY;
-         
+            distanceY = posY - enemyPosY; 
         }
 
     } else if (event.key === btnW) {
@@ -56,7 +50,6 @@ document.addEventListener('keydown', (event) => {
             posX = posX - 50;
             character.style.transform = `translate(${posY}px,${posX}px)`
             distanceX = posX - enemyPosX;
-         
         }
 
     } else if (event.key === btnD) {
@@ -64,7 +57,6 @@ document.addEventListener('keydown', (event) => {
             posY = posY + 80;
             character.style.transform = `translate(${posY}px,${posX}px)`                   
             distanceY = posY - enemyPosY;
-         
         }
    
    } else if (event.key === btnS) {
@@ -72,13 +64,10 @@ document.addEventListener('keydown', (event) => {
             posX = posX + 50;
             character.style.transform = `translate(${posY}px,${posX}px)`
             distanceX = posX - enemyPosX;
- 
         }
     } 
 
 });
-
-
 
 loadEventListeners();
 function loadEventListeners() {
@@ -86,33 +75,23 @@ function loadEventListeners() {
 }
 
 function targetEnemy() {
-    targeted = true;
 
-    
-    
-    if (targeted = true){
     rat.style.border = "1px solid red";
-        slashEnemy();
-}
+    setInterval(slashEnemy, 1000);  
+    slashEnemy();
+
 }
 
 function atackEnemy() {
    
     if (targeted === true) {
-   
+       
         enemies.rat.life -= player.atackDamage;
         ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
         
-
-        // if(enemies.rat.life <= 0) {
-        //     killEnemy();
-        // }
-
         if (enemies.rat.life <= 0) {
             killEnemy();
-            
         }
-       
     }
 }
 
@@ -121,7 +100,8 @@ function slashEnemy () {
     if (distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
     enemies.rat.life = enemies.rat.life - player.atackDamage;
     ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
-      
+     
+   
 }
     
     if (enemies.rat.life <= 0) {
@@ -132,7 +112,9 @@ function slashEnemy () {
 
 function killEnemy() {
     changePosition();
-    targeted = false;
+    rat.style.display = "none";
+    rat.style.display = "flex";
+    targeted === false;
     enemies.rat.life = enemies.rat.maxLife;
     ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
 }
@@ -142,13 +124,10 @@ function changePosition() {
     min = 0;
     let eposY = Math.floor(Math.random() * (max - min));
     let eposX = Math.floor(Math.random() * (max - min));
-    let enemyPosX = eposX * 50;
-    let enemyPosY = eposY * 80;
+    enemyPosX = eposX * 50;
+    enemyPosY = eposY * 80;
     distanceX = posX - enemyPosX;
     distanceY = posY - enemyPosY;
-    rat.style.transform = `translate(${enemyPosY}px, ${enemyPosX}px`;
-   
-
-   
-    console.log(posY);
+    rat.style.transform = `translate(${enemyPosY}px, ${enemyPosX}px`;   
 }
+
