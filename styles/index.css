@@ -480,3 +480,17 @@ width: 200px;
     width: 800px;
     height: 500px;
 }
+
+#moon-flower {
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    align-items: start;
+   
+    width: 800px;
+    height: 500px;
+}
+
+#moon-flower img {
+    padding: 15px;
+}

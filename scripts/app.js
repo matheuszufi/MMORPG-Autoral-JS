@@ -7,6 +7,11 @@ const toExpUpBar = document.getElementById('exp-progress-experience');
 const outputLevel = document.getElementById('infos-number-character-level');
 outputLevel.innerHTML = `${player.level}`
 
+
+
+const charCoins = document.getElementById('character-coins-output');
+charCoins.innerHTML = `${player.coins}`
+
 toExpUpBar.style.width = `${(player.experience / player.lvlup) * 100}%`
 expLevelBar.style.width = `${(player.experience / player.lvlup) * 100}%`
 
@@ -119,9 +124,14 @@ function slashEnemy () {
 }
 
 
+
 function killEnemy() {
+    player.coins += enemies.rat.coin;
+    charCoins.innerHTML = `${player.coins}`
     changePosition();
     ratExpUp();
+    randomCoin();
+    enemies.rat.coin = randcoin;
       toExpUpBar.style.width = `${(player.experience / player.lvlup) * 100}%`
       expLevelBar.style.width = `${(player.experience / player.lvlup) * 100}%`
     rat.addEventListener('click', targetEnemy);
@@ -173,6 +183,8 @@ function ratExpUp() {
 function levelUp() {
     player.maxLife += 5;
     player.maxMagic += 10;
+    player.life = player.maxLife
+    player.magics = player.maxMagic
 
     pOutputLife.innerHTML = `${player.life}`
     pBarLife.style.width = `${(player.life / player.maxLife) * 100}%`;
