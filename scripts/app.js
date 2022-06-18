@@ -1,4 +1,6 @@
 const character = document.getElementById('player');
+const characterLife = document.getElementById('player-life');
+
 
 const rat = document.getElementById('enemy-rat');
 const ratLife = document.getElementById('rat-life');
@@ -67,6 +69,7 @@ document.addEventListener('keydown', (event) => {
         }
     } 
 
+
 });
 
 loadEventListeners();
@@ -129,3 +132,16 @@ function changePosition() {
     
 }
 
+
+setInterval(ratAttack, 1000);
+
+function ratAttack() {
+    
+    if (distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
+   
+    player.life = player.life - enemies.rat.atk;
+    pBarLife.style.width = `${(player.life / player.maxLife) * 100}%`;
+    characterLife.style.width = `${(player.life / player.maxLife) * 100}%`;
+    pOutputLife.innerHTML = `${player.life}`;
+    }  
+}
