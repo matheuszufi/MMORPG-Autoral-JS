@@ -185,6 +185,7 @@ function levelUp() {
     player.maxMagic += 10;
     player.life = player.maxLife
     player.magics = player.maxMagic
+    player.experience = 0;
 
     pOutputLife.innerHTML = `${player.life}`
     pBarLife.style.width = `${(player.life / player.maxLife) * 100}%`;
@@ -195,7 +196,7 @@ function levelUp() {
     
     player.level++;
     outputLevel.innerHTML = `${player.level}`
-    player.lvlup = (100 * player.level) + (player.level * 50);
+    player.lvlup = ((100 * player.level) * 2 ) - (player.level * 50);
     // toExpUpBar.style.width = `${(player.lvlup - player.experience) / player.lvlup}%`
 }
 
