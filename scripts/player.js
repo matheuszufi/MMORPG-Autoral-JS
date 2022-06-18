@@ -1,3 +1,5 @@
+
+
 let player = {
     maxLife: 180,
     life: 180,
@@ -6,7 +8,7 @@ let player = {
 
     coins: 0,
 
-    lvlup: 200,
+    lvlup: 90,
     experience: 0,
     level: 1,
     magicLevel: 1,
@@ -15,10 +17,9 @@ let player = {
     distanceLevel: 1,
     shieldLevel: 1,
 
-    atackDamage: 1,
+    atackDamage: 10,
     spellDamage: 5
 }
-
 
 
 pBarMaxLife = document.getElementById('bar-max-life');
@@ -80,3 +81,8 @@ function restoreMana() {
         }
         
         setInterval(restoreLife, 4000);
+
+
+        
+
+

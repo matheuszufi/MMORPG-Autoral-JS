@@ -25,6 +25,45 @@
     align-items: center;
 }
 
+
+/*  EXPERIENCE */
+/*  EXPERIENCE */
+
+#infos-charexperience-div{
+    width: 100%;
+    font-family: 'tahoma8';
+    display: flex;
+    font-size: 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#infos-character-experience {
+    width: 90%;
+    display: flex;
+}
+
+#infos-label-character-experience{width: 90%; }
+#infos-number-character-experience{ width: 10%;}
+#infos-bar-character-experience {
+    width: 90%;
+    height: 10px;
+}
+
+#exp-to-lvl-up-experience {
+    width: 100%;
+    border: 1px solid black;
+    height: 5px;
+}
+#exp-progress-experience {
+    
+    background-color: green;
+    height: 100%;
+}
+
+/*  LEVEL */
+/*  LEVEL */
+
 #infos-charlevel-div{
     width: 100%;
     font-family: 'tahoma8';
@@ -41,7 +80,7 @@
 
 #infos-label-character-level{width: 90%; }
 #infos-number-character-level{ width: 10%;}
-#infos-bar-character-level {
+#infos-bar-character-level{
     width: 90%;
     height: 10px;
 }

@@ -1,6 +1,14 @@
 const character = document.getElementById('player');
 const characterLife = document.getElementById('player-life');
 
+const totalToExpUpBar = document.getElementById('exp-to-lvl-up-experience');
+const expLevelBar = document.getElementById('exp-progress');
+const toExpUpBar = document.getElementById('exp-progress-experience');
+const outputLevel = document.getElementById('infos-number-character-level');
+outputLevel.innerHTML = `${player.level}`
+
+toExpUpBar.style.width = `${(player.experience / player.lvlup) * 100}%`
+expLevelBar.style.width = `${(player.experience / player.lvlup) * 100}%`
 
 const rat = document.getElementById('enemy-rat');
 const ratLife = document.getElementById('rat-life');
@@ -113,6 +121,9 @@ function slashEnemy () {
 
 function killEnemy() {
     changePosition();
+    ratExpUp();
+      toExpUpBar.style.width = `${(player.experience / player.lvlup) * 100}%`
+      expLevelBar.style.width = `${(player.experience / player.lvlup) * 100}%`
     rat.addEventListener('click', targetEnemy);
     enemies.rat.life = enemies.rat.maxLife;
     ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
@@ -145,3 +156,34 @@ function ratAttack() {
     pOutputLife.innerHTML = `${player.life}`;
     }  
 }
+
+experienceOutput = document.getElementById('infos-number-character-experience');
+
+function ratExpUp() {
+    player.experience += enemies.rat.xp;
+    experienceOutput.innerHTML = player.experience;
+    
+
+
+    if(player.experience >= player.lvlup) {
+        levelUp();
+    }
+}
+
+function levelUp() {
+    player.maxLife += 5;
+    player.maxMagic += 10;
+
+    pOutputLife.innerHTML = `${player.life}`
+    pBarLife.style.width = `${(player.life / player.maxLife) * 100}%`;
+    characterLife.style.width = `${(player.life / player.maxLife) * 100}%`;
+
+    pOutputMana.innerHTML = `${player.magic}`
+    pBarMana.style.width = `${(player.magic / player.maxMagic) * 100}%`;
+    
+    player.level++;
+    outputLevel.innerHTML = `${player.level}`
+    player.lvlup = (100 * player.level) + (player.level * 50);
+    // toExpUpBar.style.width = `${(player.lvlup - player.experience) / player.lvlup}%`
+}
+

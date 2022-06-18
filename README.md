@@ -8,6 +8,15 @@ D = mover para direita
 S = mover para baixo
 
 
+1 = Healing (20HP) / 20 MANA COST
+
+Clicar em cima do inimigo para atacar
+Player só ataca e leva dano se estiver perto do inimigo
+
+
+
+
+
 Objetivos nao finalizados do game:
 
 (X) Atacar inimigo se tiver marcado && estiver do lado do enimigo;
