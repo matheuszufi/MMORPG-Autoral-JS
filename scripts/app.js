@@ -97,31 +97,46 @@ function targetEnemy() {
 
     slashEnemy();
     interval = setInterval(slashEnemy, 1000);  
-    
+ 
 
+
+ 
     rat.removeEventListener('click', targetEnemy);
    
 }
 
 
+
+const hit = document.getElementById('hit');
+
+hit.innerHTML = `-${player.atackDamage}`
+
 function slashEnemy () {
+
     rat.style.border = "1px solid red";
-    
+  
+
+  
+
+
 
     if (distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
-    enemies.rat.life = enemies.rat.life - player.atackDamage;
-    ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
-     
+    enemies.rat.life -= player.atackDamage;
+    ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`;
    
+        $("#hit").css("animation", "animeHit 1s infinite");
+    
+
 }
     
     if (enemies.rat.life <= 0) {
         killEnemy();
         clearInterval(interval);
-
+        $("#hit").css("animation", "animeHit 1s");
       
     }
 }
+
 
 
 

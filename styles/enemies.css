@@ -39,3 +39,30 @@
 #rat-image img {
     width: 100%;
 }
+
+
+
+
+#hit {
+    position: absolute;
+    color: red;
+    text-shadow: 1px 1px 1px black;
+    margin-top: 50px;
+    font-family: 'tahoma8';
+    font-size: 12px;
+    margin-left: 25px;
+    transform: translateY(0px);
+    /* animation: animeHit 1s; */
+    opacity: 0;
+}
+
+@keyframes animeHit {
+    0% {
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(-30px);
+        opacity: 1;
+    }
+}
