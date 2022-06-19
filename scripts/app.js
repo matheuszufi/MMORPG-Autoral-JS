@@ -27,7 +27,7 @@ eMinPosX = 0;
 eMinPosY = 0;
 
 let enemyPosX = 0;
-let enemyPosY = 80;
+let enemyPosY = 160;
 
 rat.style.transform= `translate(${enemyPosY}px,${enemyPosX}px)`;
 
@@ -106,8 +106,9 @@ function targetEnemy() {
 }
 
 
-
+const hitPlayer = document.getElementById('hit-player');
 const hit = document.getElementById('hit');
+
 
 hit.innerHTML = `-${player.atackDamage}`
 
@@ -116,23 +117,21 @@ function slashEnemy () {
     rat.style.border = "1px solid red";
   
 
-  
-
-
 
     if (distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
     enemies.rat.life -= player.atackDamage;
     ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`;
    
-        $("#hit").css("animation", "animeHit 1s infinite");
-    
+        $("#hit").css("animation", "animeHit 1s infinite");  // MESMO TEMPO DO ATAQUE 1000ms ou 1s
 
-}
+    } else {
+        $("#hit").css("animation", "");
+    }
     
     if (enemies.rat.life <= 0) {
         killEnemy();
         clearInterval(interval);
-        $("#hit").css("animation", "animeHit 1s");
+        $("#hit").css("animation", "");
       
     }
 }
@@ -172,14 +171,20 @@ function changePosition() {
 setInterval(ratAttack, 1000);
 
 function ratAttack() {
-    
+
     if (distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
-   
+
+        $("#hit-player").css("animation", "animeHit 1s infinite");
+        hitPlayer.innerHTML = `-${enemies.rat.atk}`;
     player.life = player.life - enemies.rat.atk;
     pBarLife.style.width = `${(player.life / player.maxLife) * 100}%`;
     characterLife.style.width = `${(player.life / player.maxLife) * 100}%`;
     pOutputLife.innerHTML = `${player.life}`;
-    }  
+
+    }  else {
+        $("#hit-players").css("animation", "");
+        hitPlayer.innerHTML = ``;
+    }
 }
 
 experienceOutput = document.getElementById('infos-number-character-experience');

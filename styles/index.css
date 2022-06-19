@@ -74,6 +74,7 @@ width: 200px;
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-bottom: 4px;
 
 }
 #player-max-life {
@@ -92,8 +93,8 @@ width: 200px;
     transition: 0.5s;
 }
 #player img {
-    width: 100%;
-    filter: drop-shadow(1px 1px 5px black);
+    width: 50%;
+   
 }
 
 
@@ -361,7 +362,7 @@ width: 200px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100%;
+    height: 105%;
     width: 200px;
     border-right: 2px solid rgba(0, 0, 0, 0.585);
     border-bottom: 1px solid rgba(0, 0, 0, 0.585);
@@ -408,6 +409,8 @@ width: 200px;
 #gp-powers {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    color: white;
     align-items: center;
     height: 100%;
     width: 550px;
@@ -423,10 +426,11 @@ width: 200px;
     width: 450px;
     height: 100px;
  
+    
     display: flex;
     justify-content: space-around;
 }
-
+#gp-powers h2{color: white; text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.921); font-size: 28px;}
 .character-power {
     background: url(../imgs/backgroundStyleTibia.png);
     box-shadow: 1px 1px 1px black;
@@ -453,7 +457,7 @@ width: 200px;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
     transition: 0.4s;
 }
 
@@ -493,4 +497,19 @@ width: 200px;
 
 #moon-flower img {
     padding: 15px;
+}
+
+#white-flower {
+    position: absolute;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+   
+    width: 800px;
+    height: 500px;
+}
+
+
+#white-flower img {
+    padding: 35px;
 }
