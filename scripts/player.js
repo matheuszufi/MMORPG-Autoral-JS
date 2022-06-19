@@ -34,7 +34,7 @@ pBarMana = document.getElementById('bar-mana');
 pOutputMana = document.getElementById('mana-output');
 pOutputMana.innerHTML = `${player.magic}`;
 
-
+healPlayer = document.getElementById('heal-player');
 
 pBarLife.style.width = `${(player.life / player.maxLife) * 100}%`
 document.addEventListener('keydown', (event) => {
@@ -47,13 +47,22 @@ document.addEventListener('keydown', (event) => {
         pBarMana.style.width = `${(player.magic / player.maxMagic) * 100}%`
 
         if(player.life < player.maxLife && player.magic > 20) {
+            $( "#heal-player" ).fadeIn( "fast", function() {});
+            $("#heal-player").css("animation", "animeHit 1s");
+             $( "#heal-player" ).fadeOut( "slow", function() {});
+            
+            healPlayer.innerHTML = `-${spells.heal.power}`;
             player.magic = player.magic - 20;
-            player.life += 5;
+            player.life += spells.heal.power;
             pBarLife.style.width = `${(player.life / player.maxLife) * 100}%`
             pOutputMana.innerHTML = `${player.magic}`
+            pOutputLife.innerHTML = `${player.life}`;
             pBarMana.style.width = `${(player.magic / player.maxMagic) * 100}%`;
             characterLife.style.width = `${(player.life / player.maxLife) * 100}%`;
-        } 
+        }
+        
+
+   
     }
 
 });

@@ -146,12 +146,12 @@ function killEnemy() {
     ratExpUp();
     randomCoin();
     enemies.rat.coin = randcoin;
-      toExpUpBar.style.width = `${(player.experience / player.lvlup) * 100}%`
-      expLevelBar.style.width = `${(player.experience / player.lvlup) * 100}%`
+    toExpUpBar.style.width = `${(player.experience / player.lvlup) * 100}%`
+    expLevelBar.style.width = `${(player.experience / player.lvlup) * 100}%`
     rat.addEventListener('click', targetEnemy);
     enemies.rat.life = enemies.rat.maxLife;
     ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
-   rat.style.border = "none";
+    rat.style.border = "none";
 }
 
 function changePosition() {
