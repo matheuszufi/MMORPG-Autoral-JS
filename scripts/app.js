@@ -7,7 +7,7 @@ const toExpUpBar = document.getElementById('exp-progress-experience');
 const outputLevel = document.getElementById('infos-number-character-level');
 outputLevel.innerHTML = `${player.level}`
 
-
+const lootAlert = document.getElementById("loot-alert");
 
 const charCoins = document.getElementById('character-coins-output');
 charCoins.innerHTML = `${player.coins}`
@@ -148,10 +148,15 @@ function killEnemy() {
     enemies.rat.coin = randcoin;
     toExpUpBar.style.width = `${(player.experience / player.lvlup) * 100}%`
     expLevelBar.style.width = `${(player.experience / player.lvlup) * 100}%`
-    rat.addEventListener('click', targetEnemy);
+
     enemies.rat.life = enemies.rat.maxLife;
     ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
     rat.style.border = "none";
+
+    $('#loot-alert').fadeIn('fast').delay(1500).fadeOut('fast');
+    lootAlert.innerHTML = `Your loot is ${enemies.rat.coin} gold coins!` 
+    //  $( "#loot-alert" ).fadeOut( "slow", function() {});
+
 }
 
 function changePosition() {
