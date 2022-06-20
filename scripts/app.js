@@ -5,19 +5,24 @@ const totalToExpUpBar = document.getElementById('exp-to-lvl-up-experience');
 const expLevelBar = document.getElementById('exp-progress');
 const toExpUpBar = document.getElementById('exp-progress-experience');
 const outputLevel = document.getElementById('infos-number-character-level');
-outputLevel.innerHTML = `${player.level}`
+outputLevel.innerHTML = `${player.level}`;
 
 const lootAlert = document.getElementById("loot-alert");
 
 const charCoins = document.getElementById('character-coins-output');
-charCoins.innerHTML = `${player.coins}`
+charCoins.innerHTML = `${player.coins}`;
 
-toExpUpBar.style.width = `${(player.experience / player.lvlup) * 100}%`
-expLevelBar.style.width = `${(player.experience / player.lvlup) * 100}%`
+toExpUpBar.style.width = `${(player.experience / player.lvlup) * 100}%`;
+expLevelBar.style.width = `${(player.experience / player.lvlup) * 100}%`;
 
 const rat = document.getElementById('enemy-rat');
 const ratLife = document.getElementById('rat-life');
-ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
+ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`;
+
+const engine = document.getElementById('engine');
+const shopBtn = document.getElementById('shop-img');
+const shopping = document.getElementById('shopping');
+const shoppingCloseBtn = document.getElementById('shopping-close-btn');
 
     // ENEMY POSITION
 
@@ -26,8 +31,8 @@ eMaxPosY = 720;
 eMinPosX = 0;
 eMinPosY = 0;
 
-let enemyPosX = 0;
-let enemyPosY = 160;
+let enemyPosX = 450;
+let enemyPosY = 720;
 
 rat.style.transform= `translate(${enemyPosY}px,${enemyPosX}px)`;
 
@@ -38,7 +43,6 @@ rat.style.transform= `translate(${enemyPosY}px,${enemyPosX}px)`;
 let posY = 0;
 let posX = 0;
 
-let targeted = false;
 
 
 let distanceX = posX - enemyPosX;
@@ -88,7 +92,8 @@ document.addEventListener('keydown', (event) => {
 loadEventListeners();
 function loadEventListeners() {
     rat.addEventListener('click', targetEnemy);
-  
+    shopBtn.addEventListener('click', openShop);
+    shoppingCloseBtn.addEventListener('click', closeShop);
 }
 
 let interval;
@@ -225,3 +230,13 @@ function levelUp() {
     // toExpUpBar.style.width = `${(player.lvlup - player.experience) / player.lvlup}%`
 }
 
+
+function openShop() {
+    engine.style.display = "none";
+    shopping.style.display = "flex";
+}
+
+function closeShop() {
+    engine.style.display = "flex";
+    shopping.style.display = "none";
+}

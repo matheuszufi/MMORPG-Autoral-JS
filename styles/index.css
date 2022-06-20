@@ -47,17 +47,14 @@ width: 200px;
 
 #engine {
     width: 800px;
-    
     height: 500px;
     background: url(../imgs/tibiaGrass.png);
-    box-shadow: 1px 1px 3px black;
-    
-    flex-wrap: wrap;
+    box-shadow: 1px 1px 3px black;   
     border-top: 1px solid black;
     border-left: 1px solid black;
-
     
 }
+
 #loot-alert-div {
     color: green;
     text-shadow: 1px 1px 1px black;
