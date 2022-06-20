@@ -34,7 +34,11 @@ pBarMana = document.getElementById('bar-mana');
 pOutputMana = document.getElementById('mana-output');
 pOutputMana.innerHTML = `${player.magic}`;
 
-healPlayer = document.getElementById('heal-player');
+const healPlayer = document.getElementById('heal-player');
+const healFx = document.getElementById('heal-fx');
+
+
+
 
 pBarLife.style.width = `${(player.life / player.maxLife) * 100}%`
 document.addEventListener('keydown', (event) => {
@@ -59,6 +63,10 @@ document.addEventListener('keydown', (event) => {
             pOutputLife.innerHTML = `${player.life}`;
             pBarMana.style.width = `${(player.magic / player.maxMagic) * 100}%`;
             characterLife.style.width = `${(player.life / player.maxLife) * 100}%`;
+       
+
+            $("#heal-fx").show().delay(1000).fadeOut();
+
         }
         
 

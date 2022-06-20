@@ -7,7 +7,11 @@
     border-top: 1px solid rgba(183, 183, 183, 0.56);
     border-left: 1px solid rgba(183, 183, 183, 0.56);
     box-shadow: 1px 1px 3px black; 
-    display: none;    
+    display: flex;    
+    position: absolute;
+
+    flex-direction: column;
+
 }
 
 #shopping-header {
@@ -38,3 +42,52 @@
     cursor: pointer;
     margin: -1px 4px;
 }
+
+
+#shopping-cart {
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    overflow-y: scroll;
+}
+
+
+#shopping-cart-all-powers {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'martel';
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+#shopping-cart-powers {
+    border-right: 1px solid rgba(0, 0, 0, 0.585);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.585);
+    border-top: 1px solid rgba(183, 183, 183, 0.56);
+    border-left: 1px solid rgba(183, 183, 183, 0.56);
+    width: 500px;
+    height: 150px;
+    background: url(../imgs/backgroundStyleTibia.png);
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgba(7, 7, 7, 0.3); 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

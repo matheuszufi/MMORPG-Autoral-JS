@@ -40,7 +40,7 @@ function ratWalk() {
     if(randwalk > 2 && randwalk <= 4 && enemyPosX >= 50) {
         enemyPosX = enemyPosX - 50;
         rat.style.transform = `translate(${enemyPosY}px,${enemyPosX}px)`;
-        distanceY = posY - enemyPosY; 
+        distanceY = posX - enemyPosX; 
     }
 
     if(randwalk > 4 && randwalk <= 6 && enemyPosY < 720) {
@@ -52,15 +52,11 @@ function ratWalk() {
     if(randwalk > 6 && randwalk <= 8 && enemyPosX < 450) {
         enemyPosX = enemyPosX + 50;
         rat.style.transform = `translate(${enemyPosY}px,${enemyPosX}px)`;
-        distanceY = posY - enemyPosY; 
+        distanceX = posX - enemyPosX; 
     }
     
-
     // enemyPosX = 0;
     // enemyPosY = 160;
 
-    console.log(randwalk);
-    console.log(enemyPosX);
-    console.log(enemyPosY);
 }
 

@@ -95,21 +95,21 @@ function loadEventListeners() {
     shopBtn.addEventListener('click', openShop);
     shoppingCloseBtn.addEventListener('click', closeShop);
 }
-
+isTag = false;
 let interval;
 
 function targetEnemy() {
-
+    isTag = true;
+    rat.style.border = "1px solid red";
     slashEnemy();
-    interval = setInterval(slashEnemy, 1000);  
+ 
  
 
 
  
-    rat.removeEventListener('click', targetEnemy);
    
 }
-
+interval = setInterval(slashEnemy, 1000);  
 
 const hitPlayer = document.getElementById('hit-player');
 const hit = document.getElementById('hit');
@@ -119,11 +119,11 @@ hit.innerHTML = `-${player.atackDamage}`
 
 function slashEnemy () {
 
-    rat.style.border = "1px solid red";
+
   
 
 
-    if (distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
+    if (isTag && distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
     enemies.rat.life -= player.atackDamage;
     ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`;
    
@@ -136,6 +136,7 @@ function slashEnemy () {
     if (enemies.rat.life <= 0) {
         killEnemy();
         clearInterval(interval);
+
         $("#hit").css("animation", "");
       
     }
@@ -145,6 +146,7 @@ function slashEnemy () {
 
 
 function killEnemy() {
+    isTag = false;
     player.coins += enemies.rat.coin;
     charCoins.innerHTML = `${player.coins}`
     changePosition();
@@ -158,8 +160,7 @@ function killEnemy() {
     ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
     rat.style.border = "none";
 
-    $('#loot-alert').fadeIn('fast').delay(1500).fadeOut('fast');
-    lootAlert.innerHTML = `Your loot is ${enemies.rat.coin} gold coins!` 
+
     //  $( "#loot-alert" ).fadeOut( "slow", function() {});
 
 }

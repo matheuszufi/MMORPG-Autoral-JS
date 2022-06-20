@@ -77,7 +77,17 @@ width: 200px;
     transition: 0.2s linear;
     position: absolute;
 }
+#heal-player {
+    display: flex;
+}
 
+#heal-fx {
+    display: none;
+    position: absolute;
+    margin-top: 10px;
+    margin-right: -80px;
+    
+}
 #div-player-life {
     width: 100%;
     display: flex;
