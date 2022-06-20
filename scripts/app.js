@@ -38,7 +38,6 @@ rat.style.transform= `translate(${enemyPosY}px,${enemyPosX}px)`;
 let posY = 0;
 let posX = 0;
 
-let targeted = false;
 
 
 let distanceX = posX - enemyPosX;
