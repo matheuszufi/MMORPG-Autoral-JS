@@ -26,8 +26,8 @@ eMaxPosY = 720;
 eMinPosX = 0;
 eMinPosY = 0;
 
-let enemyPosX = 0;
-let enemyPosY = 160;
+let enemyPosX = 450;
+let enemyPosY = 720;
 
 rat.style.transform= `translate(${enemyPosY}px,${enemyPosX}px)`;
 
