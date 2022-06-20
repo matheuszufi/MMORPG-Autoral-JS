@@ -70,6 +70,7 @@
     width: 500px;
     height: 150px;
     background: url(../imgs/backgroundStyleTibia.png);
+    display: flex;
 }
 
 
@@ -90,4 +91,24 @@
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
+  }
+
+
+  .card-powers {
+    border-right: 1px solid rgba(0, 0, 0, 0.585);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.585);
+    border-top: 1px solid rgba(183, 183, 183, 0.56);
+    width: 200px;
+    color: white;
+    border-left: 1px solid rgba(183, 183, 183, 0.56);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: url(../imgs/backgroundStyleTibia.png);
+    justify-content: space-evenly;
+  }
+
+  .card-powers p {
+    font-family: 'tahoma8';
+    font-size: 12px;
   }
