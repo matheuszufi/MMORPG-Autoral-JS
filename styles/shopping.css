@@ -1,6 +1,6 @@
 #shopping {
-    width: 800px;
-    height: 500px;
+    width: 600px;
+    height: 400px;
     background: url(../imgs/backgroundStyleTibia.png);
     border-right: 1px solid rgba(0, 0, 0, 0.585);
     border-bottom: 1px solid rgba(0, 0, 0, 0.585);
@@ -36,4 +36,5 @@
 
 #shopping-close-btn {
     cursor: pointer;
+    margin: -1px 4px;
 }

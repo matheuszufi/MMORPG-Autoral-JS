@@ -232,8 +232,9 @@ function levelUp() {
 
 
 function openShop() {
-    engine.style.display = "none";
+  
     shopping.style.display = "flex";
+    shopping.style.position = "absolute";
 }
 
 function closeShop() {
