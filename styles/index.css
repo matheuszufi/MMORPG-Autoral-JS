@@ -446,7 +446,7 @@ width: 200px;
  
     
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
 }
 #gp-powers h2{color: white; text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.921); font-size: 28px;}
 .character-power {
