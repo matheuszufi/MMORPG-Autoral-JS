@@ -49,6 +49,7 @@
     height: 100%; 
     display: flex;
     overflow-y: scroll;
+    flex-direction: column;
 }
 
 
@@ -135,4 +136,47 @@
 
   #power-ultimate {
     display: none;
+  }
+
+
+  #shopping-cart-all-potions {
+    background: url(../imgs/backgroundStyleTibia.png);
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    font-family: 'martel';
+    color: white;
+  flex-direction: column;
+  height: 200px;
+  align-items: center;
+  }
+
+
+  #shopping-cart-potions {
+   
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 150px;
+ 
+  }
+
+  .shopping-potion {
+    border-right: 1px solid rgba(0, 0, 0, 0.585);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.585);
+    border-top: 1px solid rgba(183, 183, 183, 0.56);
+    width: 80px;
+    color: white;
+    border-left: 1px solid rgba(183, 183, 183, 0.56);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: url(../imgs/backgroundStyleTibia.png);
+    justify-content: space-evenly;
+  }
+
+  .shopping-potion p {
+    font-family: 'tahoma8';
+    font-size: 12px;
   }

@@ -32,7 +32,7 @@ cardUltimate.addEventListener('click', buyUltimatePower);
 
 function buyFisicalPower() {
 
-    if (player.coins >= 500) {
+    if (player.coins >= 500 && !isPowerFisicalOn) {
         player.coins -= 500;
         charCoins.innerHTML = `${player.coins}`
         characterPowerFisical.style.display = "flex"
@@ -45,7 +45,7 @@ function buyFisicalPower() {
 
 function buyFirePower() {
 
-    if (player.coins >= 500) {
+    if (player.coins >= 500 && !isPowerFireOn) {
         player.coins -= 500;
         charCoins.innerHTML = `${player.coins}`
         characterPowerFire.style.display = "flex"
@@ -57,7 +57,7 @@ function buyFirePower() {
 };
 function buyEnergyPower() {
 
-    if (player.coins >= 500) {
+    if (player.coins >= 500 && !isPowerEnergyOn) {
         player.coins -= 500;
         charCoins.innerHTML = `${player.coins}`
         characterPowerEnergy.style.display = "flex"
@@ -69,7 +69,7 @@ function buyEnergyPower() {
 };
 function buyTerraPower() {
 
-    if (player.coins >= 500) {
+    if (player.coins >= 500 && !isPowerTerraOn) {
         player.coins -= 500;
         charCoins.innerHTML = `${player.coins}`
         characterPowerTerra.style.display = "flex"
@@ -81,7 +81,7 @@ function buyTerraPower() {
 };
 function buyIcePower() {
 
-    if (player.coins >= 500) {
+    if (player.coins >= 500 && !isPowerIceOn) {
         player.coins -= 500;
         charCoins.innerHTML = `${player.coins}`
         characterPowerIce.style.display = "flex"
@@ -93,7 +93,7 @@ function buyIcePower() {
 };
 function buyUltimatePower() {
 
-    if (player.coins >= 2500) {
+    if (player.coins >= 2500 && !isPowerUltimateOn) {
         player.coins -= 2500;
         charCoins.innerHTML = `${player.coins}`
         characterPowerUltimate.style.display = "flex"
