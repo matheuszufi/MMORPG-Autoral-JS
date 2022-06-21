@@ -7,7 +7,7 @@
     border-top: 1px solid rgba(183, 183, 183, 0.56);
     border-left: 1px solid rgba(183, 183, 183, 0.56);
     box-shadow: 1px 1px 3px black; 
-    display: flex;    
+    display: none;    
     position: absolute;
 
     flex-direction: column;
@@ -111,4 +111,28 @@
   .card-powers p {
     font-family: 'tahoma8';
     font-size: 12px;
+  }
+
+  #power-fisical {
+    display: none;
+  }
+
+  #power-fire {
+    display: none;
+  }
+
+  #power-energy {
+    display: none;
+  }
+
+  #power-terra {
+    display: none;
+  }
+
+  #power-ice {
+    display: none;
+  }
+
+  #power-ultimate {
+    display: none;
   }

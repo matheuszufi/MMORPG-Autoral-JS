@@ -103,13 +103,13 @@ function targetEnemy() {
     rat.style.border = "1px solid red";
     slashEnemy();
  
-    interval = setInterval(slashEnemy, 1000);   
+ 
 
 
  
    
 }
-
+interval = setInterval(slashEnemy, 1000);  
 
 const hitPlayer = document.getElementById('hit-player');
 const hit = document.getElementById('hit');
@@ -119,7 +119,7 @@ hit.innerHTML = `-${player.atackDamage}`
 
 function slashEnemy () {
 
-    isTag = true;
+
   
 
 
@@ -235,10 +235,10 @@ function levelUp() {
 function openShop() {
   
     shopping.style.display = "flex";
-    shopping.style.position = "absolute";
+  
 }
 
 function closeShop() {
-    engine.style.display = "flex";
+
     shopping.style.display = "none";
 }
