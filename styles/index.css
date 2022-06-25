@@ -55,18 +55,6 @@ width: 200px;
     
 }
 
-#loot-alert-div {
-    color: green;
-    text-shadow: 1px 1px 1px black;
-    width: 800px;
-    position: absolute;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 0;
-}
-#loot-alert-div p {z-index: 10;}
 #player {
     width: 80px;
     height: 50px;
