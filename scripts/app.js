@@ -48,6 +48,61 @@ let posX = 0;
 let distanceX = posX - enemyPosX;
 let distanceY = posY - enemyPosY;
 
+let engineStartX = 9800; 
+let engineStartY = 800; 
+
+//
+//
+//
+//
+//
+var bgpositionX = 0;
+var bgpositionY = 0;
+
+const playerImage = document.getElementById('player-img');
+
+function animaDown() {
+        playerImage.style.backgroundPosition = `-${bgpositionX}px 0px`; 
+        if (bgpositionX < 144) {
+            bgpositionX = bgpositionX + 48;
+        } else { 
+            bgpositionX = 96; 
+        }
+};
+
+function animaUp() {
+    bgpositionY = 144;
+    playerImage.style.backgroundPosition = `-${bgpositionX}px ${bgpositionY}px`; 
+    if (bgpositionX < 144) { 
+        bgpositionX = bgpositionX + 48;
+    } else { 
+        bgpositionX = 96; 
+    }
+};
+
+function animaLeft() {
+    bgpositionY = 96;
+    playerImage.style.backgroundPosition = `-${bgpositionX}px ${bgpositionY}px`; 
+    if (bgpositionX < 144) { 
+        bgpositionX = bgpositionX + 48;
+    } else { 
+        bgpositionX = 96; 
+    }
+};
+
+function animaRight() {
+    bgpositionY = 48;
+    playerImage.style.backgroundPosition = `-${bgpositionX}px ${bgpositionY}px`; 
+    if (bgpositionX < 144) { 
+        bgpositionX = bgpositionX + 48;
+    } else { 
+        bgpositionX = 96; 
+    }
+};
+
+
+
+
 
 
 document.addEventListener('keydown', (event) => {
@@ -57,32 +112,46 @@ document.addEventListener('keydown', (event) => {
         btnD = "d";
         btnS = "s";
  
+
+
    if(event.key === btnA) {
         if(posY > 0){
+            animaLeft();
             posY = posY - 80;
+            engineStartY = engineStartY + 80;
             character.style.transform = `translate(${posY}px,${posX}px)`
             distanceY = posY - enemyPosY; 
+            engine.style.marginLeft = `${engineStartY}px`; 
         }
 
     } else if (event.key === btnW) {
         if(posX > 0){
+            animaUp();
             posX = posX - 50;
+            engineStartX = engineStartX + 100;
             character.style.transform = `translate(${posY}px,${posX}px)`
             distanceX = posX - enemyPosX;
+            engine.style.marginTop = `${engineStartX}px`; 
         }
 
     } else if (event.key === btnD) {
-        if(posY < 720){
+        if(posY < 9920){
+            animaRight();
             posY = posY + 80;
+            engineStartY = engineStartY - 80;
             character.style.transform = `translate(${posY}px,${posX}px)`                   
             distanceY = posY - enemyPosY;
+            engine.style.marginLeft = `${engineStartY}px`; 
         }
    
    } else if (event.key === btnS) {
-        if(posX < 420){
+        if(posX < 9920){
+            animaDown();
             posX = posX + 50;
+            engineStartX = engineStartX - 100;
             character.style.transform = `translate(${posY}px,${posX}px)`
             distanceX = posX - enemyPosX;
+            engine.style.marginTop = `${engineStartX}px`; 
         }
     } 
 
@@ -95,12 +164,12 @@ function loadEventListeners() {
     shopBtn.addEventListener('click', openShop);
     shoppingCloseBtn.addEventListener('click', closeShop);
 }
-isTag = false;
+let isTag = false;
 let interval;
 
 function targetEnemy() {
     isTag = true;
-    rat.style.border = "1px solid red";
+    rat.style.background = "rgba(255,0,0,0.3)";
     slashEnemy();
  
  
@@ -149,6 +218,7 @@ function killEnemy() {
     isTag = false;
     player.coins += enemies.rat.coin;
     charCoins.innerHTML = `${player.coins}`
+    setTimeout
     changePosition();
     ratExpUp();
     randomCoin();
@@ -158,7 +228,7 @@ function killEnemy() {
 
     enemies.rat.life = enemies.rat.maxLife;
     ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
-    rat.style.border = "none";
+    rat.style.background = "none";
 
 
     //  $( "#loot-alert" ).fadeOut( "slow", function() {});
