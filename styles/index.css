@@ -73,6 +73,7 @@ width: 200px;
 }
 #heal-player {
     display: flex;
+    /* width: 10px; */
 }
 
 #heal-fx {
@@ -80,30 +81,16 @@ width: 200px;
     position: absolute;
     margin-top: 10px;
     margin-right: -80px;
+   
     
 }
-#div-player-life {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 4px;
+#div-player-life {width: 100%; display: flex; justify-content: center;}
+#div-player-mana {width: 100%; display: flex; justify-content: center;}
+#player-max-life {display: flex; width: 80%; height: 4px; background-color: rgba(39, 39, 39, 0.554); border: 1px solid black;}
+#player-max-mana {display: flex; width: 80%; height: 4px; background-color: rgba(39, 39, 39, 0.554); border: 1px solid black;}
 
-}
-#player-max-life {
-    display: flex;
-
-    width: 80%;
-    height: 4px;
-    background-color: rgba(39, 39, 39, 0.554);
-    border: 1px solid black;
-}
-
-#player-life {
-    width: 100%;
-    background-color: green;
-    height: 100%;
-    transition: 0.5s;
-}
+#player-life {width: 100%; background-color: green; height: 100%; transition: 0.5s;}
+#player-mana {width: 100%; background-color: blue; height: 100%; transition: 0.5s;}
 #player-img {
     background: url(../imgs/characterSprite.png);
     width: 50px;

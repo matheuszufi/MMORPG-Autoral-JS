@@ -37,7 +37,7 @@ pOutputMana.innerHTML = `${player.magic}`;
 const healPlayer = document.getElementById('heal-player');
 const healFx = document.getElementById('heal-fx');
 
-
+const playerMana = document.getElementById('player-mana');
 
 
 pBarLife.style.width = `${(player.life / player.maxLife) * 100}%`
@@ -58,6 +58,8 @@ document.addEventListener('keydown', (event) => {
             healPlayer.innerHTML = `-${spells.heal.power}`;
             player.magic = player.magic - 20;
             player.life += spells.heal.power;
+
+            playerMana.style.width = `${(player.magic / player.maxMagic) * 100}%`
             pBarLife.style.width = `${(player.life / player.maxLife) * 100}%`
             pOutputMana.innerHTML = `${player.magic}`
             pOutputLife.innerHTML = `${player.life}`;
@@ -81,7 +83,7 @@ function restoreMana() {
         player.magic += 2;
         pOutputMana.innerHTML = `${player.magic}`
         pBarMana.style.width = `${(player.magic / player.maxMagic) * 100}%`;
-       
+        playerMana.style.width = `${(player.magic / player.maxMagic) * 100}%`
         }
     }
     
