@@ -26,59 +26,52 @@
     let frogPosY = 0;
 
 
-    let frogBgPositionY = 64;
+    let frogBgPositionY = 0;
     let frogBgPositionX = 0;
 
-
-    frogImage.style.backgroundPosition = `-${frogBgPositionX}px ${frogBgPositionY}px`; 
+ 
 
     function frogAnimaDown() {
         
-        if (frogBgPositionY < 384) {
-            frogBgPositionY = frogBgPositionY + 128;
-            frogImage.style.backgroundPosition = `-${frogBgPositionX}px ${frogBgPositionY}px`; 
-        } else { 
-            frogBgPositionY = 64; 
-            frogImage.style.backgroundPosition = `-${frogBgPositionX}px ${frogBgPositionY}px`; 
-        }
+        frogBgPositionX = 0;
+        frogBgPositionY = 64;
+        frogImage.style.backgroundPosition = `${frogBgPositionX}px ${frogBgPositionY}px`; 
+
+        
     };
 
     function frogAnimaUp() {
-        
+        frogBgPositionX = 0;
         frogBgPositionY = 0;
-        if (frogBgPositionY < 320) { 
-            frogBgPositionY = frogBgPositionY + 128;
-            frogImage.style.backgroundPosition = `${frogBgPositionX}px ${frogBgPositionY}px`; 
-        } else { 
-            frogBgPositionY = 0; 
-            frogImage.style.backgroundPosition = `${frogBgPositionX}px ${frogBgPositionY}px`; 
-        }
+        frogImage.style.backgroundPosition = `${frogBgPositionX}px ${frogBgPositionY}px`; 
+
     };
 
     function frogAnimaLeft() {
-        bgpositionY = 128;
-        frogImage.style.backgroundPosition = `-${frogBgPositionX}px ${bgpositionY}px`; 
-        if (frogBgPositionX < 144) { 
-            frogBgPositionX = frogBgPositionX + 64;
-        } else { 
-            frogBgPositionX = 96; 
-        }
+        frogBgPositionX = 64;
+        frogBgPositionY = 0;
+        frogImage.style.backgroundPosition = `${frogBgPositionX}px ${frogBgPositionY}px`; 
+
     };
 
 function frogAnimaRight() {
-    bgpositionY = 48;
-    frogImage.style.backgroundPosition = `-${bgpositionX}px ${bgpositionY}px`; 
-    if (bgpositionX < 144) { 
-        bgpositionX = bgpositionX + 48;
-    } else { 
-        bgpositionX = 96; 
-    }
+    frogBgPositionX = 64;
+    frogBgPositionY = 64;
+    frogImage.style.backgroundPosition = `${frogBgPositionX}px ${frogBgPositionY}px`; 
+
+    // if (frogBgPositionY < 256) { 
+    //     frogBgPositionY = frogBgPositionY + 128;
+    //     frogImage.style.backgroundPosition = `${frogBgPositionX}px ${frogBgPositionY}px`; 
+    // } else { 
+    //     frogBgPositionY = 0; 
+    //     frogImage.style.backgroundPosition = `${frogBgPositionX}px ${frogBgPositionY}px`; 
+    // }
 };
 
 
 
 
-// setInterval(frogWalk, 1200);
+setInterval(frogWalk, 1200);
 function frogWalk() {
     let minFrog = 1;
     let maxFrog = 8;
@@ -87,24 +80,28 @@ function frogWalk() {
 
 
     if(randwalkFrog <= 2 && frogPosY >= 80) {
+        frogAnimaRight();
         frogPosY = frogPosY - 80;
         enemyFrog.style.transform = `translate(${frogPosY}px,${frogPosX}px)`;
          
     } 
 
     if(randwalkFrog > 2 && randwalkFrog <= 4 && frogPosX >= 50) {
+        frogAnimaUp();
         frogPosX = frogPosX - 50;
         enemyFrog.style.transform = `translate(${frogPosY}px,${frogPosX}px)`;
          
     }
 
     if(randwalkFrog > 4 && randwalkFrog <= 6 && frogPosY < 7020) {
+        frogAnimaLeft();
         frogPosY = frogPosY + 80;
         enemyFrog.style.transform = `translate(${frogPosY}px,${frogPosX}px)`;
          
     }
 
     if(randwalkFrog > 6 && randwalkFrog <= 8 && frogPosX < 4500) {
+        frogAnimaDown();
         frogPosX = frogPosX + 50;
         enemyFrog.style.transform = `translate(${frogPosY}px,${frogPosX}px)`;
          
