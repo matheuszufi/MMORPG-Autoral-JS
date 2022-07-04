@@ -50,7 +50,7 @@ width: 200px;
 
 #engine {
     width: 10000px;
-    height: 10000px;
+    height: 10020px;
     background: url(../imgs/tibiaGrass.png);
     box-shadow: 1px 1px 3px black;   
     border-top: 1px solid black;
@@ -94,7 +94,7 @@ width: 200px;
 #player-img {
     background: url(../imgs/characterSprite.png);
     width: 50px;
-    transform: scale(2.5);
+    transform: scale(2);
     height: 50px;
 }
 
