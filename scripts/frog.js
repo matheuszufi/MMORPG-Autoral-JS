@@ -41,29 +41,29 @@
             frogBgPositionY = 64; 
             frogImage.style.backgroundPosition = `-${frogBgPositionX}px ${frogBgPositionY}px`; 
         }
-};
+    };
 
-function frogAnimaUp() {
-    frogBgPositionY = 0;
+    function frogAnimaUp() {
+        
+        frogBgPositionY = 0;
+        if (frogBgPositionY < 320) { 
+            frogBgPositionY = frogBgPositionY + 128;
+            frogImage.style.backgroundPosition = `${frogBgPositionX}px ${frogBgPositionY}px`; 
+        } else { 
+            frogBgPositionY = 0; 
+            frogImage.style.backgroundPosition = `${frogBgPositionX}px ${frogBgPositionY}px`; 
+        }
+    };
 
-    if (frogBgPositionY < 320) { 
-        frogBgPositionY = frogBgPositionY + 128;
-        frogImage.style.backgroundPosition = `${frogBgPositionX}px ${frogBgPositionY}px`; 
-    } else { 
-        frogBgPositionY = 0; 
-        frogImage.style.backgroundPosition = `${frogBgPositionX}px ${frogBgPositionY}px`; 
-    }
-};
-
-function frogAnimaLeft() {
-    bgpositionY = 128;
-    frogImage.style.backgroundPosition = `-${frogBgPositionX}px ${bgpositionY}px`; 
-    if (frogBgPositionX < 144) { 
-        frogBgPositionX = frogBgPositionX + 64;
-    } else { 
-        frogBgPositionX = 96; 
-    }
-};
+    function frogAnimaLeft() {
+        bgpositionY = 128;
+        frogImage.style.backgroundPosition = `-${frogBgPositionX}px ${bgpositionY}px`; 
+        if (frogBgPositionX < 144) { 
+            frogBgPositionX = frogBgPositionX + 64;
+        } else { 
+            frogBgPositionX = 96; 
+        }
+    };
 
 function frogAnimaRight() {
     bgpositionY = 48;
