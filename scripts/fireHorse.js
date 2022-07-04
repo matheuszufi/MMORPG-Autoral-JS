@@ -35,8 +35,8 @@ enemyFireHorse.appendChild(fireHorseImage);
 
 
 // Posição no mapa
-let fireHorsePosX = 0;
-let fireHorsePosY = 0;
+let fireHorsePosX = 1000;
+let fireHorsePosY = 1000;
 
 enemyFireHorse.style.transform = `translate(${fireHorsePosY}px,${fireHorsePosX}px)`;
 
@@ -123,7 +123,7 @@ function attackFireHorse() {
     }
 }
 
-function killFireHorse() {dsd
+function killFireHorse() {
     fireHorseIsTag = false;
     enemyFireHorse.style.display = "none";
     player.coins += fireHorse.coin;
