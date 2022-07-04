@@ -1,8 +1,9 @@
 let randcoin;
 randomCoin();
 
-enemies = {
+let enemies = {
     rat: {
+        name: "Rat",
         maxLife: 20,
         life: 20,
         xp: 20,
@@ -10,6 +11,7 @@ enemies = {
         coin: randcoin
     },
     frog: {
+        name: "Frog",
         maxLife: 40,
         life: 40,
         xp: 40,
