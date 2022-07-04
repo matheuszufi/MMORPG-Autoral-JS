@@ -7,13 +7,24 @@ enemies = {
         life: 20,
         xp: 20,
         atk: 2,
-        coin: randcoin,
+        coin: randcoin
+    },
+    frog: {
+        maxLife: 40,
+        life: 40,
+        xp: 40,
+        atk: 4,
+        coin: randcoin + 20,
     }
 }
 
 
 
+enemyPosX = 450;
+enemyPosY = 720;
 
+posY = 0;
+posX = 0;
 
 function randomCoin () {
     max = 20;
@@ -22,9 +33,11 @@ function randomCoin () {
   
 }
 
+    rat = document.getElementById('enemy-rat');
 
-setInterval(ratWalk, 1000);
-function ratWalk() {
+    setInterval(ratWalk, 1000);
+
+    function ratWalk() {
     min = 1;
     max = 8;
     randwalk = Math.floor(Math.random() * (max - min) + min);

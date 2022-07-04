@@ -10,38 +10,56 @@
     transform: translate(0px, 0px);
 
 }
-#div-rat-life {
-    width: 80%;
-    
+#div-rat-life {width: 80%;}
+#rat-max-life {width: 100%; height: 4px; background-color: rgba(39, 39, 39, 0.554); border: 1px solid black;}
+#rat-life {transition: 0.2s linear; background-color: green; height: 100%;}
+#rat-image {width: 40px; height: 40px; display: flex; justify-content: center; align-content: center;}
+#rat-image img {width: 100%;}
+
+
+
+/* FROG */
+    /* FROG */
+        /* FROG */
+            /* FROG */
+                /* FROG */
+
+
+#enemy-frog {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    transition: 0.4s;
+    transform: translate(0px, 0px);
 }
 
-#rat-max-life {
-    width: 100%;
-    height: 4px;
-    background-color: rgba(39, 39, 39, 0.554);
-    border: 1px solid black;
-}
+#div-frog-life {width: 80%;}
+#frog-max-life {width: 100%; height: 4px; background-color: rgba(39, 39, 39, 0.554); border: 1px solid black;}
+#frog-life {transition: 0.2s linear; background-color: green; height: 100%;}
 
-#rat-life {
-   transition: 0.2s linear;
-    background-color: green;
-    height: 100%;    
-}
-
-#rat-image {
-    width: 40px;
-    height: 40px;
+#frog-image {
+    width: 64px;
+    height: 64px;
     display: flex;
     justify-content: center;
     align-content: center;
-}
-
-#rat-image img {
-    width: 100%;
+    background: url(../imgs/sapo.png);
 }
 
 
 
+
+
+
+/* HIT */
+    /* HIT */
+        /* HIT */
+            /* HIT */
+                /* HIT */
 
 #hit {
     position: absolute;

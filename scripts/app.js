@@ -49,7 +49,7 @@ let distanceX = posX - enemyPosX;
 let distanceY = posY - enemyPosY;
 
 let engineStartX = 9800; 
-let engineStartY = 800; 
+let engineStartY = 500; 
 
 //
 //
