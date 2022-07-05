@@ -1,6 +1,6 @@
 
 
-let player = {
+var player = {
     maxLife: 180,
     life: 180,
     maxMagic: 240,

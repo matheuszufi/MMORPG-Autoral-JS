@@ -218,8 +218,6 @@ function killEnemy() {
     isTag = false;
     player.coins += enemies.rat.coin;
     charCoins.innerHTML = `${player.coins}`
-    setTimeout
-    changePosition();
     ratExpUp();
     randomCoin();
     enemies.rat.coin = randcoin;
@@ -233,19 +231,6 @@ function killEnemy() {
 
     //  $( "#loot-alert" ).fadeOut( "slow", function() {});
 
-}
-
-function changePosition() {
-    max = 10;
-    min = 0;
-    let eposY = Math.floor(Math.random() * (max - min));
-    let eposX = Math.floor(Math.random() * (max - min));
-    enemyPosX = eposX * 50;
-    enemyPosY = eposY * 80;
-    distanceX = posX - enemyPosX;
-    distanceY = posY - enemyPosY;
-    rat.style.transform = `translate(${enemyPosY}px, ${enemyPosX}px`;   
-    
 }
 
 
@@ -276,9 +261,11 @@ function ratExpUp() {
     
 
 
-    if(player.experience >= player.lvlup) {
-        levelUp();
-    }
+
+}
+
+if(player.experience >= player.lvlup) {
+    levelUp();
 }
 
 function levelUp() {
@@ -298,7 +285,13 @@ function levelUp() {
     player.level++;
     outputLevel.innerHTML = `${player.level}`
     player.lvlup = ((100 * player.level) * 2 ) - (player.level * 50);
-    // toExpUpBar.style.width = `${(player.lvlup - player.experience) / player.lvlup}%`
+    toExpUpBar.style.width = `${(player.lvlup - player.experience) / player.lvlup}%`
+    expLevelBar.style.width = `${(player.experience / player.lvlup) * 100}%`
+
+
+    experienceOutput.innerHTML = player.experience;
+
+
 }
 
 

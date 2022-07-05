@@ -127,7 +127,9 @@
         frogIsTag = false;
         enemyFrog.style.display = "none";
         player.coins += frog.coin;
-        charCoins.innerHTML = `${player.coins}`
+        charCoins.innerHTML = `${player.coins}`;
+         
+        frogExpUp();
         setTimeout(spawnFrog, 5000);
     }
 
@@ -136,3 +138,18 @@
         frogLife.style.width = `${(frog.life / frog.maxLife) * 100}%`;
         enemyFrog.style.display = "flex"; 
     }
+
+
+    
+function frogExpUp() {
+    player.experience += frog.xp + 60;
+    experienceOutput.innerHTML = player.experience;
+    toExpUpBar.style.width = `${(player.experience / player.lvlup) * 100}%`
+    expLevelBar.style.width = `${(player.experience / player.lvlup) * 100}%`
+
+
+    if(player.experience >= player.lvlup) {
+        levelUp();
+    }
+
+}

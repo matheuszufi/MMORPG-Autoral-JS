@@ -128,6 +128,8 @@ function killFireHorse() {
     enemyFireHorse.style.display = "none";
     player.coins += fireHorse.coin;
     charCoins.innerHTML = `${player.coins}`
+
+    fireHorseExpUp();
     setTimeout(spawnFireHorse, 5000);
 }
 
@@ -135,4 +137,17 @@ function spawnFireHorse() {
     fireHorse.life = fireHorse.maxLife;
     fireHorseLife.style.width = `${(fireHorse.life / fireHorse.maxLife) * 100}%`;
     enemyFireHorse.style.display = "flex"; 
+}
+
+function fireHorseExpUp() {
+    player.experience += fireHorse.xp;
+    experienceOutput.innerHTML = player.experience;
+    toExpUpBar.style.width = `${(player.experience / player.lvlup) * 100}%`
+    expLevelBar.style.width = `${(player.experience / player.lvlup) * 100}%`
+
+
+    if(player.experience >= player.lvlup) {
+        levelUp();
+    }
+
 }
