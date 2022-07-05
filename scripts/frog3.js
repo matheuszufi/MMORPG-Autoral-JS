@@ -72,9 +72,9 @@
     };
 
 // Movimentação do Sapo
-    setInterval(frog3Walk, 1200);
+    setInterval(frogWalk, 400);
 
-    function frog3Walk() {
+    function frogWalk() {
         let minFrog3 = 1;
         let maxFrog3 = 8;
         let randwalkFrog3 = Math.floor(Math.random() * (maxFrog3 - minFrog3) + minFrog3);

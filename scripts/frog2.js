@@ -72,7 +72,7 @@
     };
 
 // Movimentação do Sapo
-    setInterval(frog2Walk, 1200);
+    setInterval(frog2Walk, 400);
 
     function frog2Walk() {
         let minFrog2 = 1;
