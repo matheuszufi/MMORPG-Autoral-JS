@@ -114,8 +114,7 @@ document.addEventListener('keydown', (event) => {
 
     
             player.magic -= 30;
-            enemies.rat.life -= 10;
-            ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
+        
             pOutputMana.innerHTML = `${player.magic}`
             pBarMana.style.width = `${(player.magic / player.maxMagic) * 100}%`;
     };
@@ -127,8 +126,7 @@ document.addEventListener('keydown', (event) => {
 
     
             player.magic -= 30;
-            enemies.rat.life -= 10;
-            ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
+       
             pOutputMana.innerHTML = `${player.magic}`
             pBarMana.style.width = `${(player.magic / player.maxMagic) * 100}%`;
     };
@@ -139,8 +137,7 @@ document.addEventListener('keydown', (event) => {
 
     
             player.magic -= 30;
-            enemies.rat.life -= 10;
-            ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
+         
             pOutputMana.innerHTML = `${player.magic}`
             pBarMana.style.width = `${(player.magic / player.maxMagic) * 100}%`;
     };
@@ -151,8 +148,7 @@ document.addEventListener('keydown', (event) => {
 
     
             player.magic -= 30;
-            enemies.rat.life -= 10;
-            ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
+          
             pOutputMana.innerHTML = `${player.magic}`
             pBarMana.style.width = `${(player.magic / player.maxMagic) * 100}%`;
     };
@@ -164,8 +160,7 @@ document.addEventListener('keydown', (event) => {
 
     
             player.magic -= 30;
-            enemies.rat.life -= 10;
-            ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
+          
             pOutputMana.innerHTML = `${player.magic}`
             pBarMana.style.width = `${(player.magic / player.maxMagic) * 100}%`;
     };
@@ -176,16 +171,13 @@ document.addEventListener('keydown', (event) => {
 
     
             player.magic -= 30;
-            enemies.rat.life -= 20;
-            ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
+     
             pOutputMana.innerHTML = `${player.magic}`
             pBarMana.style.width = `${(player.magic / player.maxMagic) * 100}%`;
     };
 
 
-    if (enemies.rat.life < 1) {
-        targetEnemy();
-    }
+
 
 
 

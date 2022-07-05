@@ -17,7 +17,7 @@ expLevelBar.style.width = `${(player.experience / player.lvlup) * 100}%`;
 
 const rat = document.getElementById('enemy-rat');
 const ratLife = document.getElementById('rat-life');
-ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`;
+// ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`;
 
 const engine = document.getElementById('engine');
 const shopBtn = document.getElementById('shop-img');
@@ -33,8 +33,6 @@ eMinPosY = 0;
 
 let enemyPosX = 450;
 let enemyPosY = 720;
-
-rat.style.transform= `translate(${enemyPosY}px,${enemyPosX}px)`;
 
 // PLAYER MOVIMENT
     // PLAYER MOVIMENT
@@ -160,59 +158,25 @@ document.addEventListener('keydown', (event) => {
 
 loadEventListeners();
 function loadEventListeners() {
-    rat.addEventListener('click', targetEnemy);
+
     shopBtn.addEventListener('click', openShop);
     shoppingCloseBtn.addEventListener('click', closeShop);
 }
-let isTag = false;
-let interval;
 
-function targetEnemy() {
-    isTag = true;
-    rat.style.background = "rgba(255,0,0,0.3)";
-    slashEnemy();
- 
- 
-
-
- 
-   
-}
-interval = setInterval(slashEnemy, 1000);  
-
-const hitPlayer = document.getElementById('hit-player');
-const hit = document.getElementById('hit');
-
-
-hit.innerHTML = `-${player.atackDamage}`
-
-function slashEnemy () {
-
-
-  
-
-
-    if (isTag && distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
-    enemies.rat.life -= player.atackDamage;
-    ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`;
-   
-        $("#hit").css("animation", "animeHit 1s infinite");  // MESMO TEMPO DO ATAQUE 1000ms ou 1s
-
-    } else {
-        $("#hit").css("animation", "");
-    }
-    
-    if (enemies.rat.life <= 0) {
-        killEnemy();
-        clearInterval(interval);
-
-        $("#hit").css("animation", "");
-      
-    }
-}
-
-
-
+// function slashEnemy () {
+//     if (isTag && distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
+//     enemies.rat.life -= player.atackDamage;
+//     ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`;
+//         $("#hit").css("animation", "animeHit 1s infinite");  // MESMO TEMPO DO ATAQUE 1000ms ou 1s
+//     } else {
+//         $("#hit").css("animation", "");
+//     }
+//     if (enemies.rat.life <= 0) {
+//         killEnemy();
+//         clearInterval(interval);
+//         $("#hit").css("animation", "");
+//     }
+// }
 
 function killEnemy() {
     isTag = false;
@@ -234,39 +198,39 @@ function killEnemy() {
 }
 
 
-setInterval(ratAttack, 1000);
+// setInterval(ratAttack, 1000);
 
-function ratAttack() {
+// function ratAttack() {
 
-    if (distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
+//     if (distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
 
-        $("#hit-player").css("animation", "animeHit 1s infinite");
-        hitPlayer.innerHTML = `-${enemies.rat.atk}`;
-    player.life = player.life - enemies.rat.atk;
-    pBarLife.style.width = `${(player.life / player.maxLife) * 100}%`;
-    characterLife.style.width = `${(player.life / player.maxLife) * 100}%`;
-    pOutputLife.innerHTML = `${player.life}`;
+//         $("#hit-player").css("animation", "animeHit 1s infinite");
+//         hitPlayer.innerHTML = `-${enemies.rat.atk}`;
+//     player.life = player.life - enemies.rat.atk;
+//     pBarLife.style.width = `${(player.life / player.maxLife) * 100}%`;
+//     characterLife.style.width = `${(player.life / player.maxLife) * 100}%`;
+//     pOutputLife.innerHTML = `${player.life}`;
 
-    }  else {
-        $("#hit-players").css("animation", "");
-        hitPlayer.innerHTML = ``;
-    }
-}
+//     }  else {
+//         $("#hit-players").css("animation", "");
+//         hitPlayer.innerHTML = ``;
+//     }
+// }
 
 experienceOutput = document.getElementById('infos-number-character-experience');
 
-function ratExpUp() {
-    player.experience += enemies.rat.xp;
-    experienceOutput.innerHTML = player.experience;
+// function ratExpUp() {
+//     player.experience += enemies.rat.xp;
+//     experienceOutput.innerHTML = player.experience;
     
 
 
 
-}
+// }
 
-if(player.experience >= player.lvlup) {
-    levelUp();
-}
+// if(player.experience >= player.lvlup) {
+//     levelUp();
+// }
 
 function levelUp() {
     player.maxLife += 5;

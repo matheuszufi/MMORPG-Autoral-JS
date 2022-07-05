@@ -6,7 +6,9 @@
         atk: 4,
         coin: 20
     }
-   
+
+    // enemies.push(frog)
+
     const enemyFrog = document.createElement('div');
     enemyFrog.setAttribute("id","enemy-frog");
     engine.appendChild(enemyFrog);
@@ -35,8 +37,8 @@
 
 
 // Posição no mapa
-    let frogPosX = 500;
-    let frogPosY = 200;
+    let frogPosX = 600;
+    let frogPosY = 400;
 
     enemyFrog.style.transform = `translate(${frogPosY}px,${frogPosX}px)`;
 

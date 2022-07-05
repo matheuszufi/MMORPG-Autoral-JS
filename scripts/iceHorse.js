@@ -35,37 +35,39 @@ enemyIceHorse.appendChild(iceHorseImage);
 
 
 // Posição no mapa
-let iceHorsePosX = 1000;
+let iceHorsePosX = 1400;
 let iceHorsePosY = 1000;
 
 enemyIceHorse.style.transform = `translate(${iceHorsePosY}px,${iceHorsePosX}px)`;
 
 // Posição do BG do personagem (PARA ANIMACAO)
-let iceHorseBgPositionY = 0;
-let iceHorseBgPositionX = 0;
+let iceHorseBgPositionY = 128;
+let iceHorseBgPositionX = 64;
+
+iceHorseImage.style.backgroundPosition = `${iceHorseBgPositionX}px ${iceHorseBgPositionY}px`;     
 
 // Animação do Sprite
 function iceHorseAnimaDown() {    
-    iceHorseBgPositionX = -128;
-    iceHorseBgPositionY = 0;
+    iceHorseBgPositionX = 128;
+    iceHorseBgPositionY = 64;
     iceHorseImage.style.backgroundPosition = `${iceHorseBgPositionX}px ${iceHorseBgPositionY}px`;      
 };
 
 function iceHorseAnimaUp() {
-    iceHorseBgPositionX = 0;
-    iceHorseBgPositionY = 0;
+    iceHorseBgPositionX = 256;
+    iceHorseBgPositionY = 64;
     iceHorseImage.style.backgroundPosition = `${iceHorseBgPositionX}px ${iceHorseBgPositionY}px`;      
 };
 
 function iceHorseAnimaLeft() {
     iceHorseBgPositionX = 64;
-    iceHorseBgPositionY = -64;
+    iceHorseBgPositionY = 64;
     iceHorseImage.style.backgroundPosition = `${iceHorseBgPositionX}px ${iceHorseBgPositionY}px`;      
 };
 
 function iceHorseAnimaRight() {
-    iceHorseBgPositionX = 64;
-    iceHorseBgPositionY = -128;
+    iceHorseBgPositionX = 192;
+    iceHorseBgPositionY = 64;
     iceHorseImage.style.backgroundPosition = `${iceHorseBgPositionX}px ${iceHorseBgPositionY}px`;     
 };
 
