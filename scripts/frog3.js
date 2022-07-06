@@ -47,29 +47,55 @@
     let frog3BgPositionX = 0;
 
 // Animação do Sprite
-    function frog3AnimaDown() {    
-        frog3BgPositionX = 0;
-        frog3BgPositionY = 64;
-        frog3Image.style.backgroundPosition = `${frog3BgPositionX}px ${frog3BgPositionY}px`;      
-    };
 
-    function frog3AnimaUp() {
-        frog3BgPositionX = 0;
-        frog3BgPositionY = 0;
-        frog3Image.style.backgroundPosition = `${frog3BgPositionX}px ${frog3BgPositionY}px`; 
-    };
+function frog3AnimaDown() {    
+    frog3BgPositionX = 128;
+    frog3BgPositionY = 64;
+    frog3Image.style.backgroundPosition = `${frog3BgPositionX}px ${frog3BgPositionY}px`;      
+    setTimeout(frog3AnimaDownEnd, 200);
+};
+function frog3AnimaDownEnd () {
+    frog3BgPositionX = 0;
+    frog3BgPositionY = 64;
+    frog3Image.style.backgroundPosition = `${frog3BgPositionX}px ${frog3BgPositionY}px`;      
+}
 
-    function frog3AnimaLeft() {
-        frog3BgPositionX = 64;
-        frog3BgPositionY = 0;
-        frog3Image.style.backgroundPosition = `${frog3BgPositionX}px ${frog3BgPositionY}px`; 
-    };
+function frog3AnimaUp() {
+    frog3BgPositionX = 128;
+    frog3BgPositionY = 0;
+    frog3Image.style.backgroundPosition = `${frog3BgPositionX}px ${frog3BgPositionY}px`; 
+    setTimeout(frog3AnimaUpEnd, 200);
+};
+function frog3AnimaUpEnd () {
+    frog3BgPositionX = 0;
+    frog3BgPositionY = 0;
+    frog3Image.style.backgroundPosition = `${frog3BgPositionX}px ${frog3BgPositionY}px`;
+}
 
-    function frog3AnimaRight() {
-        frog3BgPositionX = 64;
-        frog3BgPositionY = 64;
-        frog3Image.style.backgroundPosition = `${frog3BgPositionX}px ${frog3BgPositionY}px`; 
-    };
+function frog3AnimaLeft() {
+    frog3BgPositionX = 64;
+    frog3BgPositionY = 0;
+
+    frog3Image.style.backgroundPosition = `${frog3BgPositionX}px ${frog3BgPositionY}px`; 
+    setTimeout(frog3AnimaLeftEnd, 200);
+};
+function frog3AnimaLeftEnd () {
+    frog3BgPositionX = 64;
+    frog3BgPositionY = 128;
+    frog3Image.style.backgroundPosition = `${frog3BgPositionX}px ${frog3BgPositionY}px`;
+} 
+
+function frog3AnimaRight() {
+    frog3BgPositionX = 64;
+    frog3BgPositionY = 64;
+    frog3Image.style.backgroundPosition = `${frog3BgPositionX}px ${frog3BgPositionY}px`; 
+    setTimeout(frog3AnimaRightEnd, 200);
+};
+function frog3AnimaRightEnd () {
+    frog3BgPositionX = 64;
+    frog3BgPositionY = 192;
+    frog3Image.style.backgroundPosition = `${frog3BgPositionX}px ${frog3BgPositionY}px`;
+} 
 
 // Movimentação do Sapo
     setInterval(frogWalk, 400);

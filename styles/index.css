@@ -59,6 +59,8 @@ width: 200px;
     margin-left: 500px;
     transition: 0.2s linear;
     overflow: hidden;
+    display: flex;
+
 }
 
 #player {

@@ -35,8 +35,8 @@ enemyFireHorse.appendChild(fireHorseImage);
 
 
 // Posição no mapa
-let fireHorsePosX = 0;
-let fireHorsePosY = 0;
+let fireHorsePosX = 1000;
+let fireHorsePosY = 1000;
 
 enemyFireHorse.style.transform = `translate(${fireHorsePosY}px,${fireHorsePosX}px)`;
 
@@ -45,51 +45,90 @@ let fireHorseBgPositionY = 0;
 let fireHorseBgPositionX = 0;
 
 // Animação do Sprite
-function fireHorseAnimaDown() {    
-    fireHorseBgPositionX = 256;
-    fireHorseBgPositionY = fireHorseBgPositionY + 0;
-    fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX}px ${fireHorseBgPositionY}px`;      
-   
-    if (fireHorseBgPositionX = 256) {
-        fireHorseBgPositionX = 256
-        fireHorseBgPositionY = fireHorseBgPositionY + 256;
-        fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX} ${fireHorseBgPositionY}`;      
-    
-        if (fireHorseBgPositionY > 256) {
-            fireHorseBgPositionY = 0;
-            fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX} ${fireHorseBgPositionY}`;      
-        }
-    }
-}
 
+//DOWN
+function fireHorseAnimaDown() {
+    fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX}px ${fireHorseBgPositionY}px`;          
+    fireHorseBgPositionX = 128;
+    fireHorseBgPositionY = -64;
+    fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX}px ${fireHorseBgPositionY}px`;      
+    setTimeout(fireHorseMidAnimaDown, 200);
+};
+function fireHorseMidAnimaDown() {
+    fireHorseBgPositionX = 256;
+    fireHorseBgPositionY = 256;
+    fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX}px ${fireHorseBgPositionY}px`; 
+    setTimeout(fireHorseEndAnimaDown, 200);
+};
+function fireHorseEndAnimaDown() {
+    fireHorseBgPositionX = 256;
+    fireHorseBgPositionY = 0;
+    fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX}px ${fireHorseBgPositionY}px`; 
+} 
+
+//UP
 function fireHorseAnimaUp() {
+    fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX}px ${fireHorseBgPositionY}px`;      
+    fireHorseBgPositionX = 256;
+    fireHorseBgPositionY = -64;
+    fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX}px ${fireHorseBgPositionY}px`;      
+    
+    setTimeout(fireHorseMidAnimaUp, 200);
+};
+function fireHorseMidAnimaUp() {
+    fireHorseBgPositionX = 0;
+    fireHorseBgPositionY = 256;
+    fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX}px ${fireHorseBgPositionY}px`; 
+    setTimeout(fireHorseEndAnimaUp, 200);
+}
+function fireHorseEndAnimaUp() {
     fireHorseBgPositionX = 0;
     fireHorseBgPositionY = 0;
-    fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX}px ${fireHorseBgPositionY}px`;      
-    
-    // if (fireHorseBgPositionY = 0) {
-    //     fireHorseBgPositionY = 0;
-    //     fireHorseBgPositionX += 64;
-    //     fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX} ${fireHorseBgPositionY}`;      
-    
-    //     if (fireHorseBgPositionX >= 128) {
-    //         fireHorseBgPositionX = 0;
-    //         fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX} ${fireHorseBgPositionY}`;      
-    //     }
-    // }
-};
+    fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX}px ${fireHorseBgPositionY}px`;
+}
 
+//LEFT
 function fireHorseAnimaLeft() {
+    fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX}px ${fireHorseBgPositionY}px`;      
     fireHorseBgPositionX = 64;
     fireHorseBgPositionY = -64;
     fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX}px ${fireHorseBgPositionY}px`;      
+    setTimeout(fireHorseMidAnimaLeft, 200);
 };
-
-function fireHorseAnimaRight() {
+function fireHorseMidAnimaLeft() {
     fireHorseBgPositionX = 64;
+    fireHorseBgPositionY = 192;
+    fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX}px ${fireHorseBgPositionY}px`; 
+    setTimeout(fireHorseEndAnimaLeft, 200);
+}
+function fireHorseEndAnimaLeft() {
+    fireHorseBgPositionX = 192;
+    fireHorseBgPositionY = 0;
+    fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX}px ${fireHorseBgPositionY}px`; 
+}
+
+//RIGHT
+function fireHorseAnimaRight() {
+    fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX}px ${fireHorseBgPositionY}px`;      
+    fireHorseBgPositionX = -64;
     fireHorseBgPositionY = -128;
     fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX}px ${fireHorseBgPositionY}px`;     
+    setTimeout(fireHorseMidAnimaRight, 200);
 };
+function fireHorseMidAnimaRight() {
+    fireHorseBgPositionX = 64;
+    fireHorseBgPositionY = -128;
+
+    fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX}px ${fireHorseBgPositionY}px`; 
+    setTimeout(fireHorseEndAnimaRight, 200);
+}
+function fireHorseEndAnimaRight() {
+    fireHorseBgPositionX = -64;
+    fireHorseBgPositionY = 0;
+    fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX}px ${fireHorseBgPositionY}px`; 
+}
+
+
 
 // Movimentação do Cavalo
 setInterval(fireHorseWalk, 1000);

@@ -45,29 +45,88 @@ let fireHorse2BgPositionY = 0;
 let fireHorse2BgPositionX = 0;
 
 // Animação do Sprite
-function fireHorse2AnimaDown() {    
-    fireHorse2BgPositionX = -128;
-    fireHorse2BgPositionY = 0;
+//DOWN
+function fireHorse2AnimaDown() {
+    fireHorse2Image.style.backgroundPosition = `${fireHorse2BgPositionX}px ${fireHorse2BgPositionY}px`;          
+    fireHorse2BgPositionX = 128;
+    fireHorse2BgPositionY = -64;
     fireHorse2Image.style.backgroundPosition = `${fireHorse2BgPositionX}px ${fireHorse2BgPositionY}px`;      
+    setTimeout(fireHorse2MidAnimaDown, 200);
 };
+function fireHorse2MidAnimaDown() {
+    fireHorse2BgPositionX = 256;
+    fireHorse2BgPositionY = 256;
+    fireHorse2Image.style.backgroundPosition = `${fireHorse2BgPositionX}px ${fireHorse2BgPositionY}px`; 
+    setTimeout(fireHorse2EndAnimaDown, 200);
+};
+function fireHorse2EndAnimaDown() {
+    fireHorse2BgPositionX = 256;
+    fireHorse2BgPositionY = 0;
+    fireHorse2Image.style.backgroundPosition = `${fireHorse2BgPositionX}px ${fireHorse2BgPositionY}px`; 
+} 
 
+//UP
 function fireHorse2AnimaUp() {
+    fireHorse2Image.style.backgroundPosition = `${fireHorse2BgPositionX}px ${fireHorse2BgPositionY}px`;      
+    fireHorse2BgPositionX = 256;
+    fireHorse2BgPositionY = -64;
+    fireHorse2Image.style.backgroundPosition = `${fireHorse2BgPositionX}px ${fireHorse2BgPositionY}px`;      
+    
+    setTimeout(fireHorse2MidAnimaUp, 200);
+};
+function fireHorse2MidAnimaUp() {
+    fireHorse2BgPositionX = 0;
+    fireHorse2BgPositionY = 256;
+    fireHorse2Image.style.backgroundPosition = `${fireHorse2BgPositionX}px ${fireHorse2BgPositionY}px`; 
+    setTimeout(fireHorse2EndAnimaUp, 200);
+}
+function fireHorse2EndAnimaUp() {
     fireHorse2BgPositionX = 0;
     fireHorse2BgPositionY = 0;
-    fireHorse2Image.style.backgroundPosition = `${fireHorse2BgPositionX}px ${fireHorse2BgPositionY}px`;      
-};
+    fireHorse2Image.style.backgroundPosition = `${fireHorse2BgPositionX}px ${fireHorse2BgPositionY}px`;
+}
 
+//LEFT
 function fireHorse2AnimaLeft() {
+    fireHorse2Image.style.backgroundPosition = `${fireHorse2BgPositionX}px ${fireHorse2BgPositionY}px`;      
     fireHorse2BgPositionX = 64;
     fireHorse2BgPositionY = -64;
     fireHorse2Image.style.backgroundPosition = `${fireHorse2BgPositionX}px ${fireHorse2BgPositionY}px`;      
+    setTimeout(fireHorse2MidAnimaLeft, 200);
 };
-
-function fireHorse2AnimaRight() {
+function fireHorse2MidAnimaLeft() {
     fireHorse2BgPositionX = 64;
+    fireHorse2BgPositionY = 192;
+    fireHorse2Image.style.backgroundPosition = `${fireHorse2BgPositionX}px ${fireHorse2BgPositionY}px`; 
+    setTimeout(fireHorse2EndAnimaLeft, 200);
+}
+function fireHorse2EndAnimaLeft() {
+    fireHorse2BgPositionX = 192;
+    fireHorse2BgPositionY = 0;
+    fireHorse2Image.style.backgroundPosition = `${fireHorse2BgPositionX}px ${fireHorse2BgPositionY}px`; 
+}
+
+//RIGHT
+function fireHorse2AnimaRight() {
+    fireHorse2Image.style.backgroundPosition = `${fireHorse2BgPositionX}px ${fireHorse2BgPositionY}px`;      
+    fireHorse2BgPositionX = -64;
     fireHorse2BgPositionY = -128;
     fireHorse2Image.style.backgroundPosition = `${fireHorse2BgPositionX}px ${fireHorse2BgPositionY}px`;     
+    setTimeout(fireHorse2MidAnimaRight, 200);
 };
+function fireHorse2MidAnimaRight() {
+    fireHorse2BgPositionX = 64;
+    fireHorse2BgPositionY = -128;
+
+    fireHorse2Image.style.backgroundPosition = `${fireHorse2BgPositionX}px ${fireHorse2BgPositionY}px`; 
+    setTimeout(fireHorse2EndAnimaRight, 200);
+}
+function fireHorse2EndAnimaRight() {
+    fireHorse2BgPositionX = -64;
+    fireHorse2BgPositionY = 0;
+    fireHorse2Image.style.backgroundPosition = `${fireHorse2BgPositionX}px ${fireHorse2BgPositionY}px`; 
+}
+
 
 // Movimentação do Cavalo
 setInterval(fireHorse2Walk, 1000);

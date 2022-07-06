@@ -47,29 +47,54 @@
     let frog2BgPositionX = 0;
 
 // Animação do Sprite
-    function frog2AnimaDown() {    
-        frog2BgPositionX = 0;
-        frog2BgPositionY = 64;
-        frog2Image.style.backgroundPosition = `${frog2BgPositionX}px ${frog2BgPositionY}px`;      
-    };
+function frog2AnimaDown() {    
+    frog2BgPositionX = 128;
+    frog2BgPositionY = 64;
+    frog2Image.style.backgroundPosition = `${frog2BgPositionX}px ${frog2BgPositionY}px`;      
+    setTimeout(frog2AnimaDownEnd, 200);
+};
+function frog2AnimaDownEnd () {
+    frog2BgPositionX = 0;
+    frog2BgPositionY = 64;
+    frog2Image.style.backgroundPosition = `${frog2BgPositionX}px ${frog2BgPositionY}px`;      
+}
 
-    function frog2AnimaUp() {
-        frog2BgPositionX = 0;
-        frog2BgPositionY = 0;
-        frog2Image.style.backgroundPosition = `${frog2BgPositionX}px ${frog2BgPositionY}px`; 
-    };
+function frog2AnimaUp() {
+    frog2BgPositionX = 128;
+    frog2BgPositionY = 0;
+    frog2Image.style.backgroundPosition = `${frog2BgPositionX}px ${frog2BgPositionY}px`; 
+    setTimeout(frog2AnimaUpEnd, 200);
+};
+function frog2AnimaUpEnd () {
+    frog2BgPositionX = 0;
+    frog2BgPositionY = 0;
+    frog2Image.style.backgroundPosition = `${frog2BgPositionX}px ${frog2BgPositionY}px`;
+}
 
-    function frog2AnimaLeft() {
-        frog2BgPositionX = 64;
-        frog2BgPositionY = 0;
-        frog2Image.style.backgroundPosition = `${frog2BgPositionX}px ${frog2BgPositionY}px`; 
-    };
+function frog2AnimaLeft() {
+    frog2BgPositionX = 64;
+    frog2BgPositionY = 0;
 
-    function frog2AnimaRight() {
-        frog2BgPositionX = 64;
-        frog2BgPositionY = 64;
-        frog2Image.style.backgroundPosition = `${frog2BgPositionX}px ${frog2BgPositionY}px`; 
-    };
+    frog2Image.style.backgroundPosition = `${frog2BgPositionX}px ${frog2BgPositionY}px`; 
+    setTimeout(frog2AnimaLeftEnd, 200);
+};
+function frog2AnimaLeftEnd () {
+    frog2BgPositionX = 64;
+    frog2BgPositionY = 128;
+    frog2Image.style.backgroundPosition = `${frog2BgPositionX}px ${frog2BgPositionY}px`;
+} 
+
+function frog2AnimaRight() {
+    frog2BgPositionX = 64;
+    frog2BgPositionY = 64;
+    frog2Image.style.backgroundPosition = `${frog2BgPositionX}px ${frog2BgPositionY}px`; 
+    setTimeout(frog2AnimaRightEnd, 200);
+};
+function frog2AnimaRightEnd () {
+    frog2BgPositionX = 64;
+    frog2BgPositionY = 192;
+    frog2Image.style.backgroundPosition = `${frog2BgPositionX}px ${frog2BgPositionY}px`;
+} 
 
 // Movimentação do Sapo
     setInterval(frog2Walk, 400);

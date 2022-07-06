@@ -37,8 +37,8 @@
 
 
 // Posição no mapa
-    let frogPosX = 600;
-    let frogPosY = 400;
+    let frogPosX = 0;
+    let frogPosY = 0;
 
     enemyFrog.style.transform = `translate(${frogPosY}px,${frogPosX}px)`;
 
@@ -48,29 +48,54 @@
 
 // Animação do Sprite
     function frogAnimaDown() {    
+        frogBgPositionX = 128;
+        frogBgPositionY = 64;
+        frogImage.style.backgroundPosition = `${frogBgPositionX}px ${frogBgPositionY}px`;      
+        setTimeout(frogAnimaDownEnd, 200);
+    };
+    function frogAnimaDownEnd () {
         frogBgPositionX = 0;
         frogBgPositionY = 64;
         frogImage.style.backgroundPosition = `${frogBgPositionX}px ${frogBgPositionY}px`;      
-    };
+    }
 
     function frogAnimaUp() {
-        frogBgPositionX = 0;
+        frogBgPositionX = 128;
         frogBgPositionY = 0;
         frogImage.style.backgroundPosition = `${frogBgPositionX}px ${frogBgPositionY}px`; 
+        setTimeout(frogAnimaUpEnd, 200);
     };
+    function frogAnimaUpEnd () {
+        frogBgPositionX = 0;
+        frogBgPositionY = 0;
+        frogImage.style.backgroundPosition = `${frogBgPositionX}px ${frogBgPositionY}px`;
+    }
 
     function frogAnimaLeft() {
         frogBgPositionX = 64;
         frogBgPositionY = 0;
+
         frogImage.style.backgroundPosition = `${frogBgPositionX}px ${frogBgPositionY}px`; 
+        setTimeout(frogAnimaLeftEnd, 200);
     };
+    function frogAnimaLeftEnd () {
+        frogBgPositionX = 64;
+        frogBgPositionY = 128;
+        frogImage.style.backgroundPosition = `${frogBgPositionX}px ${frogBgPositionY}px`;
+    } 
 
     function frogAnimaRight() {
         frogBgPositionX = 64;
         frogBgPositionY = 64;
         frogImage.style.backgroundPosition = `${frogBgPositionX}px ${frogBgPositionY}px`; 
+        setTimeout(frogAnimaRightEnd, 200);
     };
-
+    function frogAnimaRightEnd () {
+        frogBgPositionX = 64;
+        frogBgPositionY = 192;
+        frogImage.style.backgroundPosition = `${frogBgPositionX}px ${frogBgPositionY}px`;
+    } 
+    
 // Movimentação do Sapo
 
 
