@@ -15,9 +15,7 @@ charCoins.innerHTML = `${player.coins}`;
 toExpUpBar.style.width = `${(player.experience / player.lvlup) * 100}%`;
 expLevelBar.style.width = `${(player.experience / player.lvlup) * 100}%`;
 
-const rat = document.getElementById('enemy-rat');
-const ratLife = document.getElementById('rat-life');
-// ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`;
+experienceOutput = document.getElementById('infos-number-character-experience');
 
 const engine = document.getElementById('engine');
 const shopBtn = document.getElementById('shop-img');
@@ -60,12 +58,12 @@ var bgpositionY = 0;
 const playerImage = document.getElementById('player-img');
 
 function animaDown() {
-        playerImage.style.backgroundPosition = `-${bgpositionX}px 0px`; 
-        if (bgpositionX < 144) {
-            bgpositionX = bgpositionX + 48;
-        } else { 
-            bgpositionX = 96; 
-        }
+    playerImage.style.backgroundPosition = `-${bgpositionX}px 0px`; 
+    if (bgpositionX < 144) {
+        bgpositionX = bgpositionX + 48;
+    } else { 
+        bgpositionX = 96; 
+    }
 };
 
 function animaUp() {
@@ -98,20 +96,13 @@ function animaRight() {
     }
 };
 
-
-
-
-
-
 document.addEventListener('keydown', (event) => {
 
-        btnA = "a";
-        btnW = "w";
-        btnD = "d";
-        btnS = "s";
+    btnA = "a";
+    btnW = "w";
+    btnD = "d";
+    btnS = "s";
  
-
-
    if(event.key === btnA) {
         if(posY > 0){
             animaLeft();
@@ -152,8 +143,6 @@ document.addEventListener('keydown', (event) => {
             engine.style.marginTop = `${engineStartX}px`; 
         }
     } 
-
-
 });
 
 loadEventListeners();
@@ -162,6 +151,53 @@ function loadEventListeners() {
     shopBtn.addEventListener('click', openShop);
     shoppingCloseBtn.addEventListener('click', closeShop);
 }
+
+function killEnemy() {
+    isTag = false;
+    player.coins += enemies.rat.coin;
+    charCoins.innerHTML = `${player.coins}`
+    ratExpUp();
+    randomCoin();
+    enemies.rat.coin = randcoin;
+    toExpUpBar.style.width = `${(player.experience / player.lvlup) * 100}%`
+    expLevelBar.style.width = `${(player.experience / player.lvlup) * 100}%`
+    enemies.rat.life = enemies.rat.maxLife;
+    ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
+    rat.style.background = "none";
+    //  $( "#loot-alert" ).fadeOut( "slow", function() {});
+}
+
+function levelUp() {
+    player.maxLife += 5;
+    player.maxMagic += 10;
+    player.life = player.maxLife
+    player.magics = player.maxMagic
+    player.experience = 0;
+
+    pOutputLife.innerHTML = `${player.life}`
+    pBarLife.style.width = `${(player.life / player.maxLife) * 100}%`;
+    characterLife.style.width = `${(player.life / player.maxLife) * 100}%`;
+
+    pOutputMana.innerHTML = `${player.magic}`
+    pBarMana.style.width = `${(player.magic / player.maxMagic) * 100}%`;
+    
+    player.level++;
+    outputLevel.innerHTML = `${player.level}`
+    player.lvlup = ((100 * player.level) * 2 ) - (player.level * 50);
+    toExpUpBar.style.width = `${(player.lvlup - player.experience) / player.lvlup}%`
+    expLevelBar.style.width = `${(player.experience / player.lvlup) * 100}%`
+    experienceOutput.innerHTML = player.experience;
+
+}
+
+function openShop() {
+    shopping.style.display = "flex";
+}
+
+function closeShop() {
+    shopping.style.display = "none";
+}
+
 
 // function slashEnemy () {
 //     if (isTag && distanceX <= 50 && distanceX >= -50 && distanceY <= 80 && distanceY >= -80) {
@@ -178,24 +214,6 @@ function loadEventListeners() {
 //     }
 // }
 
-function killEnemy() {
-    isTag = false;
-    player.coins += enemies.rat.coin;
-    charCoins.innerHTML = `${player.coins}`
-    ratExpUp();
-    randomCoin();
-    enemies.rat.coin = randcoin;
-    toExpUpBar.style.width = `${(player.experience / player.lvlup) * 100}%`
-    expLevelBar.style.width = `${(player.experience / player.lvlup) * 100}%`
-
-    enemies.rat.life = enemies.rat.maxLife;
-    ratLife.style.width = `${(enemies.rat.life / enemies.rat.maxLife) * 100}%`
-    rat.style.background = "none";
-
-
-    //  $( "#loot-alert" ).fadeOut( "slow", function() {});
-
-}
 
 
 // setInterval(ratAttack, 1000);
@@ -217,8 +235,6 @@ function killEnemy() {
 //     }
 // }
 
-experienceOutput = document.getElementById('infos-number-character-experience');
-
 // function ratExpUp() {
 //     player.experience += enemies.rat.xp;
 //     experienceOutput.innerHTML = player.experience;
@@ -231,41 +247,3 @@ experienceOutput = document.getElementById('infos-number-character-experience');
 // if(player.experience >= player.lvlup) {
 //     levelUp();
 // }
-
-function levelUp() {
-    player.maxLife += 5;
-    player.maxMagic += 10;
-    player.life = player.maxLife
-    player.magics = player.maxMagic
-    player.experience = 0;
-
-    pOutputLife.innerHTML = `${player.life}`
-    pBarLife.style.width = `${(player.life / player.maxLife) * 100}%`;
-    characterLife.style.width = `${(player.life / player.maxLife) * 100}%`;
-
-    pOutputMana.innerHTML = `${player.magic}`
-    pBarMana.style.width = `${(player.magic / player.maxMagic) * 100}%`;
-    
-    player.level++;
-    outputLevel.innerHTML = `${player.level}`
-    player.lvlup = ((100 * player.level) * 2 ) - (player.level * 50);
-    toExpUpBar.style.width = `${(player.lvlup - player.experience) / player.lvlup}%`
-    expLevelBar.style.width = `${(player.experience / player.lvlup) * 100}%`
-
-
-    experienceOutput.innerHTML = player.experience;
-
-
-}
-
-
-function openShop() {
-  
-    shopping.style.display = "flex";
-  
-}
-
-function closeShop() {
-
-    shopping.style.display = "none";
-}

@@ -35,8 +35,8 @@ enemyFireHorse.appendChild(fireHorseImage);
 
 
 // Posição no mapa
-let fireHorsePosX = 1000;
-let fireHorsePosY = 1000;
+let fireHorsePosX = 0;
+let fireHorsePosY = 0;
 
 enemyFireHorse.style.transform = `translate(${fireHorsePosY}px,${fireHorsePosX}px)`;
 
@@ -46,15 +46,37 @@ let fireHorseBgPositionX = 0;
 
 // Animação do Sprite
 function fireHorseAnimaDown() {    
-    fireHorseBgPositionX = -128;
-    fireHorseBgPositionY = 0;
+    fireHorseBgPositionX = 256;
+    fireHorseBgPositionY = fireHorseBgPositionY + 0;
     fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX}px ${fireHorseBgPositionY}px`;      
-};
+   
+    if (fireHorseBgPositionX = 256) {
+        fireHorseBgPositionX = 256
+        fireHorseBgPositionY = fireHorseBgPositionY + 256;
+        fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX} ${fireHorseBgPositionY}`;      
+    
+        if (fireHorseBgPositionY > 256) {
+            fireHorseBgPositionY = 0;
+            fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX} ${fireHorseBgPositionY}`;      
+        }
+    }
+}
 
 function fireHorseAnimaUp() {
     fireHorseBgPositionX = 0;
     fireHorseBgPositionY = 0;
     fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX}px ${fireHorseBgPositionY}px`;      
+    
+    // if (fireHorseBgPositionY = 0) {
+    //     fireHorseBgPositionY = 0;
+    //     fireHorseBgPositionX += 64;
+    //     fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX} ${fireHorseBgPositionY}`;      
+    
+    //     if (fireHorseBgPositionX >= 128) {
+    //         fireHorseBgPositionX = 0;
+    //         fireHorseImage.style.backgroundPosition = `${fireHorseBgPositionX} ${fireHorseBgPositionY}`;      
+    //     }
+    // }
 };
 
 function fireHorseAnimaLeft() {
@@ -149,5 +171,4 @@ function fireHorseExpUp() {
     if(player.experience >= player.lvlup) {
         levelUp();
     }
-
 }
