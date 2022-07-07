@@ -58,6 +58,7 @@ var bgpositionY = 0;
 const playerImage = document.getElementById('player-img');
     //DOWN
     function animaDown() {
+   
        playerImage.style.background = "url(../imgs/player/down1.png)"
        playerImage.style.backgroundRepeat = "no-repeat";
        playerImage.style.backgroundSize = "50px";
@@ -74,10 +75,12 @@ const playerImage = document.getElementById('player-img');
        playerImage.style.background = "url(../imgs/player/down3.png)"
        playerImage.style.backgroundRepeat = "no-repeat";
        playerImage.style.backgroundSize = "50px";
+       playerIsWalking = false; 
     };
 
     //UP
     function animaUp() {
+     
         playerImage.style.background = "url(../imgs/player/up1.png)"
        playerImage.style.backgroundRepeat = "no-repeat";
        playerImage.style.backgroundSize = "50px";
@@ -92,11 +95,13 @@ const playerImage = document.getElementById('player-img');
     function playerAnimaUpEnd () {
        playerImage.style.background = "url(../imgs/player/up3.png)"
        playerImage.style.backgroundRepeat = "no-repeat";
-       playerImage.style.backgroundSize = "50px";   
+       playerImage.style.backgroundSize = "50px";  
+       playerIsWalking = false;  
     };
 
     //LEFT
     function animaLeft() {
+       
         playerImage.style.background = "url(../imgs/player/left1.png)"
         playerImage.style.backgroundRepeat = "no-repeat";
         playerImage.style.backgroundSize = "50px";
@@ -112,6 +117,7 @@ const playerImage = document.getElementById('player-img');
         playerImage.style.background = "url(../imgs/player/left3.png)"
         playerImage.style.backgroundRepeat = "no-repeat";
         playerImage.style.backgroundSize = "50px";   
+        playerIsWalking = false; 
      };
 
     //RIGHT
@@ -131,58 +137,69 @@ const playerImage = document.getElementById('player-img');
      function playerAnimaRightEnd () {
         playerImage.style.background = "url(../imgs/player/right3.png)"
         playerImage.style.backgroundRepeat = "no-repeat";
-        playerImage.style.backgroundSize = "50px";   
+        playerImage.style.backgroundSize = "50px";  
+        playerIsWalking = false; 
      };
 
+// let playerIsWalking = false;
 
-document.addEventListener('keydown', (event) => {
+// if(playerIsWalking = false) {
+    document.addEventListener('keydown', (event) => {
 
-    btnA = "a";
-    btnW = "w";
-    btnD = "d";
-    btnS = "s";
- 
-   if(event.key === btnA) {
-        if(posY > 0){
-            animaLeft();
-            posY = posY - 80;
-            engineStartY = engineStartY + 80;
-            character.style.transform = `translate(${posY}px,${posX}px)`
-            distanceY = posY - enemyPosY; 
-            engine.style.marginLeft = `${engineStartY}px`; 
-        }
+        btnA = "a";
+        btnW = "w";
+        btnD = "d";
+        btnS = "s";
+     
+       if(event.key === btnA) {
+            if(posY > 0){
+              
+                animaLeft();
+                posY = posY - 80;
+                engineStartY = engineStartY + 80;
+                character.style.transform = `translate(${posY}px,${posX}px)`
+                distanceY = posY - enemyPosY; 
+                engine.style.marginLeft = `${engineStartY}px`; 
+                // playerIsWalking = true;
+            }
+    
+        } else if (event.key === btnW) {
+            if(posX > 0){
+                // playerIsWalking = true;
+                animaUp();
+                posX = posX - 50;
+                engineStartX = engineStartX + 100;
+                character.style.transform = `translate(${posY}px,${posX}px)`
+                distanceX = posX - enemyPosX;
+                engine.style.marginTop = `${engineStartX}px`; 
+            }
+    
+        } else if (event.key === btnD) {
+            if(posY < 9920){
+          
+                animaRight();
+                posY = posY + 80;
+                engineStartY = engineStartY - 80;
+                character.style.transform = `translate(${posY}px,${posX}px)`                   
+                distanceY = posY - enemyPosY;
+                engine.style.marginLeft = `${engineStartY}px`; 
+                // playerIsWalking = true;
+            }
+       
+       } else if (event.key === btnS) {
+            if(posX < 9920){
+                // playerIsWalking = true;
+                animaDown();
+                posX = posX + 50;
+                engineStartX = engineStartX - 100;
+                character.style.transform = `translate(${posY}px,${posX}px)`
+                distanceX = posX - enemyPosX;
+                engine.style.marginTop = `${engineStartX}px`; 
+            }
+        } 
+    });
+// }
 
-    } else if (event.key === btnW) {
-        if(posX > 0){
-            animaUp();
-            posX = posX - 50;
-            engineStartX = engineStartX + 100;
-            character.style.transform = `translate(${posY}px,${posX}px)`
-            distanceX = posX - enemyPosX;
-            engine.style.marginTop = `${engineStartX}px`; 
-        }
-
-    } else if (event.key === btnD) {
-        if(posY < 9920){
-            animaRight();
-            posY = posY + 80;
-            engineStartY = engineStartY - 80;
-            character.style.transform = `translate(${posY}px,${posX}px)`                   
-            distanceY = posY - enemyPosY;
-            engine.style.marginLeft = `${engineStartY}px`; 
-        }
-   
-   } else if (event.key === btnS) {
-        if(posX < 9920){
-            animaDown();
-            posX = posX + 50;
-            engineStartX = engineStartX - 100;
-            character.style.transform = `translate(${posY}px,${posX}px)`
-            distanceX = posX - enemyPosX;
-            engine.style.marginTop = `${engineStartX}px`; 
-        }
-    } 
-});
 
 loadEventListeners();
 function loadEventListeners() {
