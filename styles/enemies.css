@@ -103,7 +103,7 @@
         align-items: center;
         flex-direction: column;
         position: relative;
-        transition: 0.4s;
+        transition: 0.9s linear;
         transform: translate(0px, 0px);
     }
     #div-zumbie-name {color: rgb(22, 135, 22); font-size: 16px; font-family: 'tahoma8';  text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black; font-weight: 900;}
@@ -113,13 +113,16 @@
     
     #zumbie-image {
         width: 64px;
-        height: 70px;
+        height: 64px;
         display: flex;
         justify-content: center;
         align-content: center;
-        background: url(../imgs/zumbie/down3.bmp);
-      background-repeat: no-repeat;
-        margin-top: -5px;
+        background: url(../imgs/zumbie/down3.png);
+        background-repeat: no-repeat;
+        margin-top: 5px;
+        margin-left: 15px;
+        background-size: 50px;
+       
     }
     
 

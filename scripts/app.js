@@ -56,45 +56,84 @@ var bgpositionX = 0;
 var bgpositionY = 0;
 
 const playerImage = document.getElementById('player-img');
-
-function animaDown() {
-    playerImage.style.backgroundPosition = `-${bgpositionX}px 0px`; 
-    if (bgpositionX < 144) {
-        bgpositionX = bgpositionX + 48;
-    } else { 
-        bgpositionX = 96; 
+    //DOWN
+    function animaDown() {
+       playerImage.style.background = "url(../imgs/player/down1.png)"
+       playerImage.style.backgroundRepeat = "no-repeat";
+       playerImage.style.backgroundSize = "50px";
+       setTimeout(playerAnimaDownMid, 300);
+    };
+    function playerAnimaDownMid () {
+       playerImage.style.background = "url(../imgs/player/down2.png)"
+       playerImage.style.backgroundRepeat = "no-repeat";
+       playerImage.style.backgroundSize = "50px";
+       setTimeout(playerAnimaDownEnd, 300);
+    
     }
-};
+    function playerAnimaDownEnd () {
+       playerImage.style.background = "url(../imgs/player/down3.png)"
+       playerImage.style.backgroundRepeat = "no-repeat";
+       playerImage.style.backgroundSize = "50px";
+    };
 
-function animaUp() {
-    bgpositionY = 144;
-    playerImage.style.backgroundPosition = `-${bgpositionX}px ${bgpositionY}px`; 
-    if (bgpositionX < 144) { 
-        bgpositionX = bgpositionX + 48;
-    } else { 
-        bgpositionX = 96; 
+    //UP
+    function animaUp() {
+        playerImage.style.background = "url(../imgs/player/up1.png)"
+       playerImage.style.backgroundRepeat = "no-repeat";
+       playerImage.style.backgroundSize = "50px";
+       setTimeout(playerAnimaUpMid, 300);
+    };
+    function playerAnimaUpMid () {
+       playerImage.style.background = "url(../imgs/player/up2.png)"
+       playerImage.style.backgroundRepeat = "no-repeat";
+       playerImage.style.backgroundSize = "50px";
+       setTimeout(playerAnimaUpEnd, 300);
     }
-};
+    function playerAnimaUpEnd () {
+       playerImage.style.background = "url(../imgs/player/up3.png)"
+       playerImage.style.backgroundRepeat = "no-repeat";
+       playerImage.style.backgroundSize = "50px";   
+    };
 
-function animaLeft() {
-    bgpositionY = 96;
-    playerImage.style.backgroundPosition = `-${bgpositionX}px ${bgpositionY}px`; 
-    if (bgpositionX < 144) { 
-        bgpositionX = bgpositionX + 48;
-    } else { 
-        bgpositionX = 96; 
-    }
-};
+    //LEFT
+    function animaLeft() {
+        playerImage.style.background = "url(../imgs/player/left1.png)"
+        playerImage.style.backgroundRepeat = "no-repeat";
+        playerImage.style.backgroundSize = "50px";
+        setTimeout(playerAnimaLeftMid, 300);
+     };
+     function playerAnimaLeftMid () {
+        playerImage.style.background = "url(../imgs/player/left2.png)"
+        playerImage.style.backgroundRepeat = "no-repeat";
+        playerImage.style.backgroundSize = "50px";
+        setTimeout(playerAnimaLeftEnd, 300);
+     }
+     function playerAnimaLeftEnd () {
+        playerImage.style.background = "url(../imgs/player/left3.png)"
+        playerImage.style.backgroundRepeat = "no-repeat";
+        playerImage.style.backgroundSize = "50px";   
+     };
 
-function animaRight() {
-    bgpositionY = 48;
-    playerImage.style.backgroundPosition = `-${bgpositionX}px ${bgpositionY}px`; 
-    if (bgpositionX < 144) { 
-        bgpositionX = bgpositionX + 48;
-    } else { 
-        bgpositionX = 96; 
-    }
-};
+    //RIGHT
+
+    function animaRight() {
+        playerImage.style.background = "url(../imgs/player/right1.png)"
+        playerImage.style.backgroundRepeat = "no-repeat";
+        playerImage.style.backgroundSize = "50px";
+        setTimeout(playerAnimaRightMid, 300);
+     };
+     function playerAnimaRightMid () {
+        playerImage.style.background = "url(../imgs/player/right2.png)"
+        playerImage.style.backgroundRepeat = "no-repeat";
+        playerImage.style.backgroundSize = "50px";
+        setTimeout(playerAnimaRightEnd, 300);
+     }
+     function playerAnimaRightEnd () {
+        playerImage.style.background = "url(../imgs/player/right3.png)"
+        playerImage.style.backgroundRepeat = "no-repeat";
+        playerImage.style.backgroundSize = "50px";   
+     };
+
 
 document.addEventListener('keydown', (event) => {
 

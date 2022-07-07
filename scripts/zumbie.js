@@ -1,7 +1,7 @@
     let zumbie = {
         name: "Zumbie",
         maxLife: 200,
-        life: 200,
+        life: 20,
         xp: 400,
         atk: 4,
         coin: 30
@@ -45,60 +45,94 @@
 // Posição do BG do personagem (PARA ANIMACAO)
 
 // Animação do Sprite
-    function zumbieAnimaDown() {    
-     
-        setTimeout(zumbieAnimaDownMid, 200);
+//DOWN
+    function zumbieAnimaDown() { 
+        zumbieImage.style.background = "url(../imgs/zumbie/down1.png)"
+        zumbieImage.style.backgroundRepeat = "no-repeat";
+        zumbieImage.style.backgroundSize = "44px";
+        setTimeout(zumbieAnimaDownMid, 300);
     };
     function zumbieAnimaDownMid () {
-        setTimeout(zumbieAnimaDownEnd, 200);
+        zumbieImage.style.background = "url(../imgs/zumbie/down2.png)"
+        zumbieImage.style.backgroundRepeat = "no-repeat";
+        zumbieImage.style.backgroundSize = "44px";
+        setTimeout(zumbieAnimaDownEnd, 300);
     
     }
     function zumbieAnimaDownEnd () {
-
+        zumbieImage.style.background = "url(../imgs/zumbie/down3.png)"
+        zumbieImage.style.backgroundRepeat = "no-repeat";
+        zumbieImage.style.backgroundSize = "44px";
     }
 
+//UP
     function zumbieAnimaUp() {    
-     
-        setTimeout(zumbieAnimaUpMid, 200);
+        zumbieImage.style.background = "url(../imgs/zumbie/up1.png)"
+        zumbieImage.style.backgroundRepeat = "no-repeat";
+        zumbieImage.style.backgroundSize = "44px";
+        setTimeout(zumbieAnimaUpMid, 300);
     };
     function zumbieAnimaUpMid () {
-        setTimeout(zumbieAnimaUpEnd, 200);
+        zumbieImage.style.background = "url(../imgs/zumbie/up2.png)"
+        zumbieImage.style.backgroundRepeat = "no-repeat";
+        zumbieImage.style.backgroundSize = "44px";
+        setTimeout(zumbieAnimaUpEnd, 300);
     
     }
     function zumbieAnimaUpEnd () {
-
+        zumbieImage.style.background = "url(../imgs/zumbie/up3.png)"
+        zumbieImage.style.backgroundRepeat = "no-repeat";
+        zumbieImage.style.backgroundSize = "44px";
     }
 
+//LEFT
     function zumbieAnimaLeft() {    
-     
-        setTimeout(zumbieAnimaLeftMid, 200);
+        zumbieImage.style.background = "url(../imgs/zumbie/left1.png)"
+        zumbieImage.style.backgroundRepeat = "no-repeat";
+        zumbieImage.style.backgroundSize = "44px";
+        setTimeout(zumbieAnimaLeftMid, 300);
     };
     function zumbieAnimaLeftMid () {
-        setTimeout(zumbieAnimaLeftEnd, 200);
+        zumbieImage.style.background = "url(../imgs/zumbie/left2.png)"
+        zumbieImage.style.backgroundRepeat = "no-repeat";
+        zumbieImage.style.backgroundSize = "44px";
+        setTimeout(zumbieAnimaLeftEnd, 300);
     
     }
     function zumbieAnimaLeftEnd () {
-
+        zumbieImage.style.background = "url(../imgs/zumbie/left3.png)"
+        zumbieImage.style.backgroundRepeat = "no-repeat";
+        zumbieImage.style.backgroundSize = "44px";
     }
 
+//RIGHT
     function zumbieAnimaRight() {    
-     
-        setTimeout(zumbieAnimaRightMid, 200);
+        zumbieImage.style.background = "url(../imgs/zumbie/right1.png)"
+        zumbieImage.style.backgroundRepeat = "no-repeat";
+        zumbieImage.style.backgroundSize = "44px";
+        setTimeout(zumbieAnimaRightMid, 300);
     };
     function zumbieAnimaRightMid () {
-        setTimeout(zumbieAnimaRightEnd, 200);
+        zumbieImage.style.background = "url(../imgs/zumbie/right2.png)"
+        zumbieImage.style.backgroundRepeat = "no-repeat";
+        zumbieImage.style.backgroundSize = "44px";
+        setTimeout(zumbieAnimaRightEnd, 300);
     
     }
     function zumbieAnimaRightEnd () {
-
+        zumbieImage.style.background = "url(../imgs/zumbie/right3.png)"
+        zumbieImage.style.backgroundRepeat = "no-repeat";
+        zumbieImage.style.backgroundSize = "44px";
     }
 
    
+    let zumbieIsLive = true;
     
 // Movimentação do Sapo
 
+   if(zumbieIsLive = true) {
+    var intervalZumbieWalk = setInterval(zumbieWalk, 900);
 
-    // setInterval(zumbieWalk, 400);
 
     function zumbieWalk() {
         let minZumbie = 1;
@@ -106,7 +140,7 @@
         let randwalkZumbie = Math.floor(Math.random() * (maxZumbie - minZumbie) + minZumbie);
 
         if(randwalkZumbie <= 2 && zumbiePosY >= 80) {
-            zumbieAnimaRight();
+            zumbieAnimaLeft();
             zumbiePosY = zumbiePosY - 80;
             enemyZumbie.style.transform = `translate(${zumbiePosY}px,${zumbiePosX}px)`;      
         } 
@@ -118,7 +152,7 @@
         }
 
         if(randwalkZumbie > 4 && randwalkZumbie <= 6 && zumbiePosY < 7020) {
-            zumbieAnimaLeft();
+            zumbieAnimaRight();
             zumbiePosY = zumbiePosY + 80;
             enemyZumbie.style.transform = `translate(${zumbiePosY}px,${zumbiePosX}px)`;   
         }
@@ -129,42 +163,64 @@
             enemyZumbie.style.transform = `translate(${zumbiePosY}px,${zumbiePosX}px)`;
         }
     }
-
+    
     let zumbieIsTag = false;
 
     enemyZumbie.addEventListener('click', targetZumbie)
 
     function targetZumbie() {
-        zumbieIsTag = true;
+        if (zumbieIsLive) {
+            zumbieIsTag = true;
 
-        if(zumbieIsTag) {
-            attackZumbie();
+            if(zumbieIsTag) {
+                attackZumbie();
+            }
         }
     }
 
     function attackZumbie() {
-        zumbie.life -= player.atackDamage;
-        zumbieLife.style.width = `${(zumbie.life / zumbie.maxLife) * 100}%`;
+        if (zumbieIsLive = true) {
+            zumbie.life -= player.atackDamage;
+            zumbieLife.style.width = `${(zumbie.life / zumbie.maxLife) * 100}%`;
 
-        if(zumbie.life <= 0) {
-            killZumbie();
+            if(zumbie.life <= 0) {
+                zumbieIsLive = false;
+                killZumbie();
+            }
         }
     }
 
     function killZumbie() {
         zumbieIsTag = false;
-        enemyZumbie.style.display = "none";
+
         player.coins += zumbie.coin;
         charCoins.innerHTML = `${player.coins}`;
-         
+        zumbieImage.style.background = "url(../imgs/zumbie/dead.png)"
+        zumbieImage.style.backgroundRepeat = "no-repeat";
+        zumbieImage.style.backgroundSize = "44px";
         zumbieExpUp();
-        setTimeout(spawnZumbie, 5000);
+        clearInterval(intervalZumbieWalk);
+        setTimeout(hideZumbie, 3000);
     }
+}
 
+   
+
+  
+    
+    function hideZumbie() {
+        enemyZumbie.style.display = "none"; 
+        setTimeout(spawnZumbie, 3000);
+    }
     function spawnZumbie() {
         zumbie.life = zumbie.maxLife;
         zumbieLife.style.width = `${(zumbie.life / zumbie.maxLife) * 100}%`;
         enemyZumbie.style.display = "flex"; 
+        zumbieIsLive = true;
+        setInterval(zumbieWalk, 900);
+        zumbieImage.style.background = "url(../imgs/zumbie/down3.png)";
+        zumbieImage.style.backgroundRepeat = "no-repeat";
+        zumbieImage.style.backgroundSize = "44px";
     }
 
 
